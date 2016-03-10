@@ -1,4 +1,4 @@
-package pusat.android.makananbekuenak.com.distributor;
+package pusat.android.makananbekuenak.com.aplikasi_distributor;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

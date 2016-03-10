@@ -1,4 +1,4 @@
-package pusat.android.makananbekuenak.com.distributor;
+package pusat.android.makananbekuenak.com.aplikasi_distributor;
 
 import org.junit.Test;
 
