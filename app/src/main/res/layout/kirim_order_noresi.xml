@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/nmrResi"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukan Nomor Resi"
+        android:textSize="23dp">
+    <requestFocus/>
+    </EditText>
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="18dp">
+
+        <Button
+            android:id="@+id/btnProses"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:text="Proses"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:id="@+id/btnKembali"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:text="Kembali"/>
+
+    </LinearLayout>
+</LinearLayout>

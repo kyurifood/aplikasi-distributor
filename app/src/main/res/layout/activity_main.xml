@@ -11,7 +11,12 @@
     tools:context="pusat.android.makananbekuenak.com.aplikasi_distributor.MainActivity">
 
     <TextView
-        android:text="Hello World!"
+        android:layout_centerInParent="true"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:text="Congratulation...!!"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+
 </RelativeLayout>
