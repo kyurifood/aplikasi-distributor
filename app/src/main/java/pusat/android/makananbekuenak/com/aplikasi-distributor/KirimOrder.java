@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import pusat.android.makananbekuenak.com.aplikasi_distributor.HomeScreen;
+
 public class KirimOrder extends Activity {
 
     Button btnKirim, btnReset,btnPrs, btnCancel;
@@ -66,7 +68,7 @@ public class KirimOrder extends Activity {
                 dialog.cancel();
 
                 // Pindah Screen
-                Intent i = new Intent(KirimOrder.this, pusat.android.makananbekuenak.com.aplikasi_distributor.MainActivity.class);
+                Intent i = new Intent(getApplicationContext(), HomeScreen.class);
                 startActivity(i);
                 finish();
             }
