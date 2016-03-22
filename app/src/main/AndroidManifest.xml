@@ -8,6 +8,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity android:name=".EditdataPribadi">
+
+        <activity android:name=".HomeScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -15,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".UpdateStok" />
+        <activity android:name=".KirimOrder"/>
+        <activity android:name=".Pengaturan"/>
 
     </application>
+
 
 </manifest>
