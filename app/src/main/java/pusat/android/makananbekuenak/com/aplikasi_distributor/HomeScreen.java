@@ -17,6 +17,7 @@ public class HomeScreen extends AppCompatActivity{
 
         Button pengaturan = (Button) findViewById(R.id.pengaturan);
         Button kirimorder = (Button) findViewById(R.id.pesanan);
+        Button laporan = (Button) findViewById(R.id.laporan);
 
         //--Pengaturan
         pengaturan.setOnClickListener(new View.OnClickListener() {
@@ -38,6 +39,14 @@ public class HomeScreen extends AppCompatActivity{
         //--Produk
 
         //Laporan
+
+        laporan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent panggil_class = new Intent(getApplicationContext(), Laporan.class);
+                startActivity(panggil_class);
+            }
+        });
 
         //Kotak Masuk
     }

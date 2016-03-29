@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
 
 public class UpdateStok extends AppCompatActivity {
 
