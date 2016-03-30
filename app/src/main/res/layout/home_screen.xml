@@ -36,6 +36,7 @@
             <Button
                 android:layout_width="317dp"
                 android:layout_height="match_parent"
+                android:onClick="btn_kirimorder"
                 android:text="|Pesanan"
                 android:id="@+id/pesanan"
                 android:drawableLeft="@drawable/ic_pesanan"
@@ -43,6 +44,7 @@
             <Button
                 android:layout_width="317dp"
                 android:layout_height="match_parent"
+                android:onClick="btn_laporan"
                 android:text="|Laporan"
                 android:id="@+id/laporan"
                 android:drawableLeft="@drawable/ic_laporan"
@@ -58,6 +60,7 @@
                 android:layout_width="317dp"
                 android:layout_height="match_parent"
                 android:text="|Pengaturan"
+                android:onClick="btn_pengaturan"
                 android:id="@+id/pengaturan"
                 android:drawableLeft="@drawable/ic_pengaturan"
                 android:layout_gravity="center_horizontal" />
