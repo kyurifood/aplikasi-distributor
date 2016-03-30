@@ -1,76 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <LinearLayout android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.28">
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="13dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="|Produk"
+            android:textSize="20dp"
+            android:id="@+id/produk"
+            android:drawableLeft="@drawable/icon_produk"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:text="|Pesanan"
+            android:id="@+id/pesanan"
+            android:drawableLeft="@drawable/ic_pesanan"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+    <LinearLayout android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:text="|Laporan"
+            android:id="@+id/laporan"
+            android:drawableLeft="@drawable/ic_laporan"
+            android:layout_gravity="center_horizontal" />
 
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/scrollView">
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_margin="18dp"
-            android:orientation="vertical">
+    </LinearLayout>
+    <LinearLayout android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:text="|Kotak Masuk"
+            android:id="@+id/kotakmasuk"
+            android:drawableLeft="@drawable/ic_pesan"
+            android:layout_gravity="center_horizontal" />
 
+    </LinearLayout>
+    <LinearLayout android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="13dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:text="|Pengaturan"
+            android:id="@+id/pengaturan"
+            android:drawableLeft="@drawable/ic_pengaturan"
+            android:layout_gravity="center_horizontal" />
 
-            <Button
-                android:layout_width="317dp"
-                android:layout_height="match_parent"
-                android:text="|Produk"
-                android:id="@+id/produk"
-                android:drawableLeft="@drawable/icon_produk"
-                android:layout_gravity="center_horizontal" />
-            <Button
-                android:layout_width="317dp"
-                android:layout_height="match_parent"
-                android:text="|Pesanan"
-                android:id="@+id/pesanan"
-                android:drawableLeft="@drawable/ic_pesanan"
-                android:layout_gravity="center_horizontal" />
-            <Button
-                android:layout_width="317dp"
-                android:layout_height="match_parent"
-                android:text="|Laporan"
-                android:id="@+id/laporan"
-                android:drawableLeft="@drawable/ic_laporan"
-                android:layout_gravity="center_horizontal" />
-            <Button
-                android:layout_width="317dp"
-                android:layout_height="match_parent"
-                android:text="|Kotak Masuk"
-                android:id="@+id/kotakmasuk"
-                android:drawableLeft="@drawable/ic_pesan"
-                android:layout_gravity="center_horizontal" />
-            <Button
-                android:layout_width="317dp"
-                android:layout_height="match_parent"
-                android:text="|Pengaturan"
-                android:id="@+id/pengaturan"
-                android:drawableLeft="@drawable/ic_pengaturan"
-                android:layout_gravity="center_horizontal" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="center_horizontal"></LinearLayout>
-
-
-        </LinearLayout>
-
-    </ScrollView>
-
-
-</RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

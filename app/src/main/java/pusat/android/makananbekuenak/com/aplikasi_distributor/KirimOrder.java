@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 
 import pusat.android.makananbekuenak.com.aplikasi_distributor.HomeScreen;
 
-public class KirimOrder extends Activity {
+public class KirimOrder extends AppCompatActivity {
 
     Button btnKirim, btnReset,btnPrs, btnCancel;
     EditText nmr, nama, market, nml, nomoResi;
