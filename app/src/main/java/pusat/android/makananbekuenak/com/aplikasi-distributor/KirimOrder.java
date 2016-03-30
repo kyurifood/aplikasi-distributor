@@ -78,7 +78,7 @@ public class KirimOrder extends Activity {
             @Override
             public void onClick(View v) {
                 // Tombol Batal
-                Toast.makeText(KirimOrder.this, "Anda Tidak Memasukan Nomor Resi", Toast.LENGTH_LONG).show();
+                Toast.makeText(KirimOrder.this, "Anda Gagal Memasukan Nomor Resi", Toast.LENGTH_LONG).show();
                 dialog.cancel();
                 // bersihkan
                 nmr.setText("");
