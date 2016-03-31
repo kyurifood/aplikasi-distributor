@@ -14,7 +14,7 @@ import pusat.android.makananbekuenak.com.aplikasi_distributor.HomeScreen;
 
 public class KirimOrder extends AppCompatActivity {
 
-    Button btnKirim, btnReset,btnPrs, btnCancel;
+    Button btnKirim,btnPrs, btnCancel;
     EditText nmr, nama, market, nml, nomoResi;
 
     @Override
@@ -23,7 +23,6 @@ public class KirimOrder extends AppCompatActivity {
         setContentView(R.layout.kirim_order);
 
         btnKirim = (Button) findViewById(R.id.btnSubmit);
-        btnReset = (Button) findViewById(R.id.btnReset);
 
         nmr = (EditText) findViewById(R.id.nmOrder);
         nama = (EditText) findViewById(R.id.nmPenerima);
@@ -34,16 +33,6 @@ public class KirimOrder extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 NotifikasiResi();
-            }
-        });
-
-        btnReset.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                nmr.setText("");
-                nama.setText("");
-                market.setText("");
-                nml.setText("");
-
             }
         });
     }
@@ -81,11 +70,6 @@ public class KirimOrder extends AppCompatActivity {
                 // Tombol Batal
                 Toast.makeText(KirimOrder.this, "Anda Gagal Memasukan Nomor Resi", Toast.LENGTH_LONG).show();
                 dialog.cancel();
-                // bersihkan
-                nmr.setText("");
-                nama.setText("");
-                market.setText("");
-                nml.setText("");
             }
         });
     }
