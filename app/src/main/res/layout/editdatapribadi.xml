@@ -1,129 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ScrollView01"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:scrollbars="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".RegistrasiMarketer"
+    android:weightSum="1">
+
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:orientation="vertical"
-        android:layout_height="fill_parent">
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
         <TextView
-            android:id="@+id/judulForm"
-            android:gravity="center"
-            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/formTitle"
-            android:minHeight="60dp"
-            android:textSize="10pt">
+            android:text="EDIT DATA PRIBADI "
+            android:layout_width="fill_parent"
+            android:padding="5dp"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="20sp">
         </TextView>
-        <EditText
-            android:id="@+id/txtNama"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:hint="@string/namaTitle"
-            >
-        </EditText>
-        <EditText
-            android:id="@+id/txtEmail"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:hint="@string/EmailTitle"
-            >
-        </EditText>
-        <EditText
-            android:id="@+id/txtNoHP"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:hint="No HP"
-            >
-        </EditText>
-        <EditText
-            android:id="@+id/txtWhatsAppp"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:hint="WhatsAppp"
-            >
-        </EditText>
-        <EditText
-            android:id="@+id/txtPinBbm"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:hint="Pin Bbm"
-            >
-        </EditText>
-
-        <Spinner
-            android:id="@+id/pilJK"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:prompt="@string/JK1"
-            android:entries="@array/JKlist"
-            android:minWidth="60dp">
-        </Spinner>
-        <Spinner
-            android:id="@+id/pilJK"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:prompt="@string/pk1"
-            android:entries="@array/pklist"
-            >
-        </Spinner>
-        <EditText
-            android:id="@+id/txtAlamat"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:hint="Alamat"
-            >
-        </EditText>
-        <Spinner
-            android:id="@+id/pilJK"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:prompt="@string/JK1"
-            android:entries="@array/bklist"
-            >
-        </Spinner>
-
-        <Spinner
-            android:id="@+id/pilJK"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:prompt="@string/JK1"
-            android:entries="@array/wklist"
-            >
-        </Spinner>
-        <Spinner
-            android:id="@+id/pilJK"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:prompt="@string/JK1"
-            android:entries="@array/cklist"
-            >
-        </Spinner>
-        <EditText
-            android:id="@+id/txt"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:hint="Kode Psot"
-            >
-        </EditText>
-
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:text="@string/SubmitTitle"
-            ></Button>
-
-        <Button
-            android:id="@+id/btnCancel"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:text="@string/CancelTitle"
-            >
-        </Button>
     </LinearLayout>
-</ScrollView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="567dp"
+        android:layout_weight="8.20"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true"> <include layout="@layout/editdatapribadi_form"/></ScrollView>
+
+
+
+</RelativeLayout>
+

@@ -7,16 +7,16 @@
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".EditdataPribadi"/>
+        <activity android:name=".HomeScreen"/>
 
-        <activity android:name=".HomeScreen" >
+        <activity android:name=".UpdateStok" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UpdateStok" />
+        <activity android:name=".EditdataPribadi" />
         <activity android:name=".KirimOrder"/>
         <activity android:name=".Pengaturan"/>
         <activity android:name=".Laporan"/>
