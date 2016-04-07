@@ -33,4 +33,23 @@
     <color name="base">#AAAAAA</color>
     <color name="iron">#CCCCCC</color>
     <color name="hijau">#6BB45A</color>
+
+    <!--style registrasi-->
+    <color name="white_primary_text">#FFFFFF</color>
+    <color name="white_secondary_text">#B3FFFFFF</color>
+    <color name="white_disabled_hint_text">#80FFFFFF</color>
+    <color name="white_divider">#26FFFFFF</color>
+
+    <color name="colorAccentDark">#6bbe50</color>
+    <color name="colorAccentre">#6bbe50</color>
+    <color name="background">#E6E6E6</color>
+
+    <color name="material_red">#E53935</color>
+    <color name="material_red_dark">#D32F2F</color>
+
+    <color name="black_primary_text">#BF000000</color>
+    <color name="black_secondary_text">#80000000</color>
+    <color name="black_disabled_hint_text">#4D000000</color>
+    <color name="black_divider">#4D000000</color>
+
 </resources>
