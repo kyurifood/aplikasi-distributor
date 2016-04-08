@@ -1,67 +1,39 @@
-
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <LinearLayout
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
-        <ImageView
-
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/produk"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Kode Barang"
-            android:padding="7dp"
-            android:textAllCaps="true"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:id="@+id/item_baru"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nama Barang"
-            android:padding="7dp"
-            android:textColor="@android:color/black"
-            android:textAllCaps="true"
-            android:textStyle="bold"
-            android:id="@+id/item_lunas"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Harga Barang"
-            android:padding="7dp"
-            android:textColor="@android:color/black"
-            android:textAllCaps="true"
-            android:textStyle="bold"
-            android:id="@+id/item_dikirim"/>
-    </LinearLayout>
-
+        android:paddingRight="15dp"
+        android:paddingTop="10dp" />
     <ToggleButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New ToggleButton"
         android:id="@+id/toggleButton"
-        android:checked="false" />
-
-    <LinearLayout android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
-    </LinearLayout>
-</LinearLayout>
+        android:layout_below="@+id/name"
+        android:layout_alignParentRight="true" />
+    <TextView android:id="@+id/name"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#FFFF00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/photo"/>
+    <TextView android:id="@+id/itemDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_toRightOf="@id/photo" />
+    <TextView android:id="@+id/price"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:textColor="#32cd32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemDescription"
+        android:layout_toRightOf="@id/photo" />
+</RelativeLayout>

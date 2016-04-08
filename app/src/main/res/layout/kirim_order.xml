@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_height="wrap_content"
-        android:background="#000000"
-        android:layout_width="fill_parent">
-
-        <TextView
-            android:gravity="center_horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Kirim Order"
-            android:textColor="#ffffff"
-            android:textSize="14pt"/>
-
-    </LinearLayout>
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
-        android:layout_width="310dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
 
         <EditText
             android:id="@+id/nmOrder"
@@ -39,9 +32,11 @@
 
     <LinearLayout
         android:layout_gravity="center_horizontal"
-        android:layout_width="310dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
 
          <EditText
             android:id="@+id/nmPenerima"
@@ -55,9 +50,11 @@
 
     <LinearLayout
         android:layout_gravity="center_horizontal"
-        android:layout_width="310dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
 
         <EditText
             android:id="@+id/nmMarket"
@@ -70,9 +67,11 @@
 
     <LinearLayout
         android:layout_gravity="center_horizontal"
-        android:layout_width="310dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -90,17 +89,18 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_marginTop="18dp"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:gravity="right">
 
             <Button
                 android:id="@+id/btnSubmit"
@@ -110,17 +110,8 @@
                 android:background="#000000"
                 android:textColor="#ffffff"
                 android:text="Kirim"
-                android:layout_marginRight="12dp"/>
-
-            <Button
-                android:id="@+id/btnReset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="5"
-                android:background="#000000"
-                android:textColor="#ffffff"
-                android:text="Reset"/>
+                android:layout_marginRight="50dp"/>
         </LinearLayout>
     </LinearLayout>
-
+    </LinearLayout>
 </LinearLayout>
