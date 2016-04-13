@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".EditdataPribadiDistributor">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGIONAL"
+        android:id="@+id/textView" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/pk1"
+        android:entries="@array/pklist"
+        android:id="@+id/spinregional" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,7 +25,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
         android:id="@+id/editkode" />
 
     <TextView
@@ -28,7 +36,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
         android:id="@+id/editnama" />
 
     <TextView
@@ -66,7 +73,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:id="@+id/editwa" />
 
     <TextView
@@ -78,20 +84,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
         android:id="@+id/editbb" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="REGIONAL"
-        android:id="@+id/textView" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:prompt="@string/pk1"
-        android:entries="@array/pklist"
-        android:id="@+id/spinregional" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -103,7 +96,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
-        android:ems="30"
+        android:ems="10"
         android:id="@+id/editalamat" />
 
     <TextView
@@ -148,7 +141,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:id="@+id/editkodepos" />
 
     <TextView
@@ -159,25 +151,19 @@
 
     <Button
         style="@style/RedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="+"
         android:id="@+id/btnbank" />
+
 
     <ListView style="@style/LayoutMatchParent"
         android:dividerHeight="@dimen/component_padding_margin"
         android:divider="@android:color/transparent"
         android:id="@+id/lv_item" />
 
-
     <Button
         style="@style/GreenButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SIMPAN"
+        android:text="DAFTAR"
         android:id="@+id/btndaf"
         android:layout_gravity="center_horizontal" />
-
-
 
 </LinearLayout>

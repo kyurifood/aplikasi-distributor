@@ -60,7 +60,6 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 		holder.txt_itemDescription.setText(updateStokItemDetailsrrayList.get(position).getItemDescription());
 		holder.txt_itemPrice.setText(updateStokItemDetailsrrayList.get(position).getPrice());
 		holder.itemImage.setImageResource(imgid[updateStokItemDetailsrrayList.get(position).getImageNumber() - 1]);
-//		imageLoader.DisplayImage("http://192.168.1.28:8082/ANDROID/images/BEVE.jpeg", holder.itemImage);
 
 		return convertView;
 	}

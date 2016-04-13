@@ -55,29 +55,29 @@ public class UpdateStokmagesActivity extends Activity {
     	item_details.setPrice("Rp 250.00");
     	item_details.setImageNumber(3);
     	results.add(item_details);
-    	
+
     	item_details = new UpdateStokItemDetails();
     	item_details.setName("004");
     	item_details.setItemDescription("Chicken Karapao");
     	item_details.setPrice("Rp 350.00");
     	item_details.setImageNumber(4);
     	results.add(item_details);
-    	
+
     	item_details = new UpdateStokItemDetails();
     	item_details.setName("005");
     	item_details.setItemDescription("Fish Karapao");
     	item_details.setPrice("Rp 310.00");
     	item_details.setImageNumber(5);
     	results.add(item_details);
-    	
+
     	item_details = new UpdateStokItemDetails();
     	item_details.setName("006");
     	item_details.setItemDescription("Karapao Angel");
     	item_details.setPrice("Rp 250.00");
     	item_details.setImageNumber(6);
     	results.add(item_details);
-    	
-    	
+
+
     	return results;
     }
 }
