@@ -9,7 +9,10 @@
         android:label="Distributor"
         android:theme="@style/CustomActionBarTheme">
 
-        <activity android:name=".HomeScreen">
+
+        <activity
+            android:name=".UpdateStokmagesActivity"
+            android:label="updatestok">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -17,12 +20,24 @@
         </activity>
 
         <activity
+            android:name=".EditdataPribadi"
+            android:label="editdatapribadi">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
+        <activity
             android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.LoginActivity"
             android:theme="@style/AppTheme.Dark"/>
         <activity
             android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity"
             android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".UpdateStok"/>
+        <activity android:name=".HomeScreen"/>
+        <activity android:name=".RegistrasiDistributor"/>
+
         <activity
             android:name=".KirimOrder"
             android:label="Kirim Order"
@@ -56,6 +71,6 @@
                 android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.HomeScreen" />
             <!-- END Coding Kembali Ke Menu Utama-->
         </activity>
-        <activity android:name=".EditdataPribadi"/>
+
     </application>
 </manifest>

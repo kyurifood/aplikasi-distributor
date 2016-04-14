@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 public class HomeScreen extends AppCompatActivity{
     @Override
@@ -15,6 +16,14 @@ public class HomeScreen extends AppCompatActivity{
 
         //Intent intent = new Intent(this, LoginActivity.class);
         //startActivity(intent);
+
+//        Button produk=(Button)findViewById(R.id.produk);
+//        produk.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), pusat.android.makananbekuenak.com.aplikasi_distributor.RegistrasiDistributor.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     @Override
