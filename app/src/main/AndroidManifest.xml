@@ -8,11 +8,9 @@
         android:supportsRtl="true"
         android:label="Distributor"
         android:theme="@style/CustomActionBarTheme">
-
-
         <activity
-            android:name=".UpdateStokmagesActivity"
-            android:label="updatestok">
+            android:name=".HomeScreen"
+            android:label="Homescren">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -20,12 +18,13 @@
         </activity>
 
         <activity
+            android:name=".UpdateStokmagesActivity"
+            android:label="updatestok">
+        </activity>
+
+        <activity
             android:name=".EditdataPribadi"
             android:label="editdatapribadi">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
 
 
@@ -35,7 +34,7 @@
         <activity
             android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity"
             android:theme="@style/AppTheme.Dark"/>
-        <activity android:name=".HomeScreen"/>
+
         <activity android:name=".RegistrasiDistributor"/>
 
         <activity
