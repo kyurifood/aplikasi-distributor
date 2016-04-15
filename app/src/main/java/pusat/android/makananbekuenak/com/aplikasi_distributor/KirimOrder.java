@@ -1,7 +1,6 @@
 package pusat.android.makananbekuenak.com.aplikasi_distributor;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -50,14 +49,18 @@ public class KirimOrder extends AppCompatActivity {
         btnPrs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Tombol Proses Order
-                Toast.makeText(KirimOrder.this, "Berhasil Memasukan Nomor Resi", Toast.LENGTH_LONG).show();
-                dialog.cancel();
+                String kode = nomoResi.getText().toString();
 
-                // Pindah Screen
-                Intent i = new Intent(getApplicationContext(), HomeScreen.class);
-                startActivity(i);
-                finish();
+                if (!validasiResi(kode)) {
+                    nomoResi.setError("Nomor Resi Tidak Valid");
+                    {
+                        Toast.makeText(KirimOrder.this, "Kesalahan Pengisian Nomor Resi", Toast.LENGTH_SHORT).show();
+                    }
+                } else cekResi();
+            }
+            private void cekResi() {
+                Toast.makeText(KirimOrder.this, "Berhasil Memasukan Nomor Resi", Toast.LENGTH_SHORT).show();
+                dialog.cancel();
             }
         });
 
@@ -69,5 +72,12 @@ public class KirimOrder extends AppCompatActivity {
                 dialog.cancel();
             }
         });
+
     }
+
+
+    public boolean validasiResi(String kode) {
+        return kode.length() > 10;
+    }
+
 }

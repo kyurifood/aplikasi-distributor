@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Masukan Nomor Resi"
-        android:textSize="23dp">
+        android:textSize="23dp"
+        android:inputType="number">
     <requestFocus/>
     </EditText>
 
