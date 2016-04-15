@@ -7,7 +7,7 @@
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".EditdataPribadi">
+        <activity android:name=".EditdataPribadi" />
 
         <activity android:name=".HomeScreen" >
             <intent-filter>
@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".UpdateStok" />
-        <activity android:name=".KirimOrder"/>
+        <activity android:name=".KirimOrder" />
         <activity android:name=".Pengaturan"/>
 
     </application>
