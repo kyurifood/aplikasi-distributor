@@ -1,28 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, form_activity!</string>
-    <string name="formTitle">Edit Info Pribadi</string>
-    <string name="namaTitle">Nama</string>
-    <string name="EmailTitle">Email</string>
-    <string name="NoHp">No Hp</string>
-    <string name="Whatsapp">Whatsapp</string>
-    <string name="PinBbm">Pin Bbm</string>
-    <string name="alamatTitle">Alamat</string>
-    <string name="KodePost">Kode Post</string>
 
-    <string name="SubmitTitle">Submit</string>
-    <string name="CancelTitle">Cancel</string>
+    <string name="action_settings">Settings</string>
 
-    <string name="JK1">Pilih Rekening Bank</string>
-    <string name="JK2">BRI</string>
-    <string name="JK3">Danamon</string>
-    <string name="JK4">Muamalad</string>
-    <string-array name="JKlist">
-        <item>@string/JK1</item>
-        <item>@string/JK2</item>
-        <item>@string/JK3</item>
-        <item>@string/JK4</item>
-    </string-array>
 
     <string name="pk1">Pilih Regional</string>
     <string name="pk2">Sulawesi</string>
@@ -33,38 +13,5 @@
         <item>@string/pk2</item>
         <item>@string/pk3</item>
         <item>@string/pk4</item>
-    </string-array>
-
-    <string name="bk1">Pilih Provinsi/Kabupaten</string>
-    <string name="bk2">DKI Jakarta</string>
-    <string name="bk3">Bogor</string>
-    <string name="bk4">Aceh</string>
-    <string-array name="bklist">
-        <item>@string/bk1</item>
-        <item>@string/bk2</item>
-        <item>@string/bk3</item>
-        <item>@string/bk4</item>
-    </string-array>
-
-    <string name="wk1">Pilih Kecamatan</string>
-    <string name="wk2">Kota Tua</string>
-    <string name="wk3">Kota Aceh</string>
-    <string name="wk4">Kota Kalimantan</string>
-    <string-array name="wklist">
-        <item>@string/wk1</item>
-        <item>@string/wk2</item>
-        <item>@string/wk3</item>
-        <item>@string/wk4</item>
-    </string-array>
-
-    <string name="ck1">Pilih Kelurahan</string>
-    <string name="ck2">Molosipat</string>
-    <string name="ck3">Pabuaran</string>
-    <string name="ck4">Sinombayuga</string>
-    <string-array name="cklist">
-        <item>@string/ck1</item>
-        <item>@string/ck2</item>
-        <item>@string/ck3</item>
-        <item>@string/ck4</item>
     </string-array>
 </resources>

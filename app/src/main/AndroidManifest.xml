@@ -6,21 +6,82 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
+
         android:theme="@style/AppTheme" >
         <activity android:name=".EditdataPribadi" />
 
-        <activity android:name=".HomeScreen" >
+        <activity android:name=".HomeScreen" />
+
+        android:label="Distributor"
+        android:theme="@style/CustomActionBarTheme">
+        <activity
+            android:name=".HomeScreen"
+            android:label="Homescren">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".UpdateStok" />
+
+
         <activity android:name=".KirimOrder" />
         <activity android:name=".Pengaturan"/>
 
+
+        <activity
+            android:name=".UpdateStokmagesActivity"
+            android:label="updatestok">
+        </activity>
+
+        <activity
+            android:name=".EditdataPribadi"
+            android:label="editdatapribadi">
+        </activity>
+
+
+        <activity
+            android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.LoginActivity"
+            android:theme="@style/AppTheme.Dark"/>
+        <activity
+            android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity"
+            android:theme="@style/AppTheme.Dark"/>
+
+        <activity android:name=".RegistrasiDistributor"/>
+
+        <activity
+            android:name=".KirimOrder"
+            android:label="Kirim Order"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|adjustResize">
+            <!--Coding Kembali Ke Menu Utama-->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.HomeScreen"/>
+            <!-- END Coding Kembali Ke Menu Utama-->
+        </activity>
+        <activity
+            android:name=".Pengaturan"
+            android:label="Pengaturan"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
+            <!--Coding Kembali Ke Menu Utama-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.HomeScreen"/>
+            <!-- END Coding Kembali Ke Menu Utama-->
+        </activity>
+        <activity
+            android:name=".Laporan"
+            android:label="Laporan"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
+            <!--Coding Kembali Ke Menu Utama-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.HomeScreen" />
+            <!-- END Coding Kembali Ke Menu Utama-->
+        </activity>
+
     </application>
-
-
 </manifest>

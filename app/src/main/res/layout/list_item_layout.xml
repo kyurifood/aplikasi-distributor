@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Panel.Vertical">
+
+    <TextView style="@style/Text.Headline"
+        android:text="Bank"
+        android:id="@+id/Bank"
+        android:textSize="@dimen/abc_text_size_title_material_toolbar" />
+    <TextView style="@style/Text.Label"
+        android:text="bank"
+        android:id="@+id/list_item_bank" />
+
+    <TextView style="@style/Text.Headline"
+        android:text="Rekening"
+        android:id="@+id/rekening"
+        android:textSize="@dimen/abc_text_size_title_material_toolbar" />
+
+    <TextView style="@style/Text.Label"
+        android:text="Rekening"
+        android:id="@+id/list_item_rekening" />
+
+    <TextView style="@style/Text.Headline"
+        android:text="Nama"
+        android:id="@+id/nama"
+        android:textSize="@dimen/abc_text_size_title_material_toolbar" />
+
+    <TextView style="@style/Text.Label"
+        android:text="Nama"
+        android:id="@+id/list_item_nama" />
+
+    <TextView style="@style/Text.Headline"
+        android:text="Cabang"
+        android:id="@+id/cabang"
+        android:textSize="@dimen/abc_text_size_title_material_toolbar" />
+
+    <TextView style="@style/Text.Label"
+        android:text="Cabang"
+        android:id="@+id/list_item_cabang" />
+
+    <LinearLayout style="@style/ComponentLayout"
+        android:orientation="horizontal"
+        android:gravity="right">
+
+        <Button style="@style/RedButton"
+            android:text="delete"
+            android:id="@+id/delete"/>
+
+    </LinearLayout>
+</LinearLayout>
