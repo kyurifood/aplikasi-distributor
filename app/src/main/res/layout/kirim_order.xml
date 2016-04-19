@@ -5,6 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:id="@+id/spinner"
+        android:layout_below="@+id/selection"
+        android:layout_alignParentRight="true"
+        android:prompt="@string/p1"
+        android:layout_alignParentEnd="true" />
+
+    <Spinner
+        android:id="@+id/spin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/p1"/>
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"

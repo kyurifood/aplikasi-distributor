@@ -9,6 +9,7 @@
         android:label="Distributor"
         android:theme="@style/CustomActionBarTheme">
 
+
         <activity android:name=".HomeScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
