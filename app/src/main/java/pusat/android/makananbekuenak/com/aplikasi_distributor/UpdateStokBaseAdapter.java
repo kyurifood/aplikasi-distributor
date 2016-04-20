@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import java.util.ArrayList;
 
 public class UpdateStokBaseAdapter extends BaseAdapter {
@@ -22,11 +24,14 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 			R.drawable.produk
 			};
 	
-	private LayoutInflater l_Inflater;
+	public LayoutInflater l_Inflater;
+
+	public Context context;
 
 	public UpdateStokBaseAdapter(Context context, ArrayList<UpdateStokItemDetails> results) {
 		updateStokItemDetailsrrayList = results;
 		l_Inflater = LayoutInflater.from(context);
+		this.context = context;
 	}
 
 	public int getCount() {
@@ -50,6 +55,7 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 			holder.txt_itemDescription = (TextView) convertView.findViewById(R.id.itemDescription);
 			holder.txt_itemPrice = (TextView) convertView.findViewById(R.id.price);
 			holder.itemImage = (ImageView) convertView.findViewById(R.id.photo);
+			holder.opsi = (Switch) convertView.findViewById(R.id.mySwitch);
 
 			convertView.setTag(holder);
 		} else {
@@ -60,6 +66,21 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 		holder.txt_itemDescription.setText(updateStokItemDetailsrrayList.get(position).getItemDescription());
 		holder.txt_itemPrice.setText(updateStokItemDetailsrrayList.get(position).getPrice());
 		holder.itemImage.setImageResource(imgid[updateStokItemDetailsrrayList.get(position).getImageNumber() - 1]);
+		//---
+		holder.opsi.setChecked(true);
+		holder.opsi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+				if (isChecked) {
+					//ON
+					Toast.makeText(context, "Ada", Toast.LENGTH_LONG).show();
+				} else {
+					//OFF
+					Toast.makeText(context, "Tidak Ada", Toast.LENGTH_LONG).show();
+				}
+			}
+		});//--
 
 		return convertView;
 	}
@@ -69,5 +90,6 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 		TextView txt_itemDescription;
 		TextView txt_itemPrice;
 		ImageView itemImage;
+		Switch opsi;
 	}
 }

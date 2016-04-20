@@ -67,4 +67,9 @@ public class HomeScreen extends AppCompatActivity{
         startActivity(panggil_class);
     }
 
+    public void btn_produk(View v) {
+        Intent panggil_class = new Intent(getApplicationContext(), UpdateStokmagesActivity.class);
+        startActivity(panggil_class);
+    }
+
 }
