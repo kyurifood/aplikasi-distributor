@@ -2,31 +2,34 @@ package pusat.android.makananbekuenak.com.aplikasi_distributor.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
+import pusat.android.makananbekuenak.com.aplikasi_distributor.KirimOrder;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ListBarang;
+
 
 /**
  * Created by id-oz on 3/28/16.
  */
-public class ListBarangAdapter extends BaseAdapter {
+public class ListBarangAdapter extends BaseAdapter  {
 
-    private Context context;
+    public Context context;
     private List<ListBarang> barangList;
     private Integer[] imgid;
     public ListBarangAdapter(Context context, List<ListBarang> barangList){
         this.context = context;
         this.barangList = barangList;
-
 
     }
 
@@ -47,7 +50,7 @@ public class ListBarangAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(convertView == null)
+        if (convertView == null)
             convertView = LayoutInflater.from(context).inflate(R.layout.list_barang_layout, parent, false);
 
         TextView namaproduk = (TextView) convertView.findViewById(R.id.nama_produk);
@@ -80,8 +83,6 @@ public class ListBarangAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Toast.makeText(context, barang.getNama_produk(), Toast.LENGTH_SHORT).show();
             }
-
-
         });
 
         return convertView;
