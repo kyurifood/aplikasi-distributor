@@ -2,90 +2,78 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:layout_weight="1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
 
-    <LinearLayout android:layout_height="match_parent"
+    <ImageView
         android:layout_width="match_parent"
-        android:orientation="horizontal"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="13dp">
-        <Button
+        android:src="@drawable/poot"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+        <Button style="@style/Hijau"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="|Produk"
+            android:text="Produk"
             android:textSize="20dp"
+            android:layout_weight="1"
             android:id="@+id/produk"
-            android:drawableLeft="@drawable/icon_produk"
+            android:drawableLeft="@drawable/ic_shopping_bag"
             android:layout_gravity="center_horizontal" />
-    </LinearLayout>
-    <LinearLayout android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp">
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="btn_pesanan"
             android:textSize="20dp"
-            android:text="|Pesanan"
-            android:id="@+id/pesanan"
-            android:drawableLeft="@drawable/ic_pesanan"
+            style="@style/Hijau"
+            android:text="Pesanan"
+            android:id="@+id/pesanana"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_trolley"
             android:layout_gravity="center_horizontal" />
-    </LinearLayout>
-    <LinearLayout android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp">
+
         <Button
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="btn_laporan"
+            style="@style/Hijau"
             android:textSize="20dp"
-            android:text="|Laporan"
+            android:text="Laporan"
             android:id="@+id/laporan"
-            android:drawableLeft="@drawable/ic_laporan"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_clipboard"
             android:layout_gravity="center_horizontal" />
 
-    </LinearLayout>
-    <LinearLayout android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp">
+
         <Button
+            style="@style/Hijau"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="20dp"
-            android:text="|Kotak Masuk"
+            android:text="Kotak Masuk"
             android:id="@+id/kotakmasuk"
-            android:drawableLeft="@drawable/ic_pesan"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_email"
             android:layout_gravity="center_horizontal" />
 
-    </LinearLayout>
-    <LinearLayout android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginBottom="13dp">
+
         <Button
+            style="@style/Hijau"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="btn_pengaturan"
             android:textSize="20dp"
-            android:text="|Pengaturan"
+            android:text="Pengaturan"
+            android:layout_weight="1"
             android:id="@+id/pengaturan"
-            android:drawableLeft="@drawable/ic_pengaturan"
+            android:drawableLeft="@drawable/ic_cogwheel"
             android:layout_gravity="center_horizontal" />
 
-    </LinearLayout>
+
 </LinearLayout>
