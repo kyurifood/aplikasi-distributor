@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
     <color name="blue">#4285F4</color>
     <color name="blue_sky_primary">#bed4df</color>
     <color name="blue_sky_secondary">#9EC4CD</color>
@@ -40,7 +40,7 @@
     <color name="white_disabled_hint_text">#80FFFFFF</color>
     <color name="white_divider">#26FFFFFF</color>
 
-    <color name="colorAccentDark">#6bbe50</color>
+
     <color name="colorAccentre">#6bbe50</color>
     <color name="background">#E6E6E6</color>
 
@@ -51,5 +51,7 @@
     <color name="black_secondary_text">#80000000</color>
     <color name="black_disabled_hint_text">#4D000000</color>
     <color name="black_divider">#4D000000</color>
+    <color name="colorAccent">#FFC107</color>
+    <color name="colorAccentDark">#FB8C00</color>
 
 </resources>

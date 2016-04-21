@@ -39,17 +39,6 @@
         <activity android:name=".RegistrasiDistributor"/>
 
         <activity
-            android:name=".KirimOrder"
-            android:label="Kirim Order"
-            android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="adjustPan|adjustResize">
-            <!--Coding Kembali Ke Menu Utama-->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.HomeScreen"/>
-            <!-- END Coding Kembali Ke Menu Utama-->
-        </activity>
-        <activity
             android:name=".Pengaturan"
             android:label="Pengaturan"
             android:configChanges="orientation|screenSize"
@@ -70,6 +59,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.HomeScreen" />
             <!-- END Coding Kembali Ke Menu Utama-->
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="Pesanan"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
+        <!--Coding Kembali Ke Menu Utama-->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.HomeScreen" />
+        <!-- END Coding Kembali Ke Menu Utama-->
         </activity>
 
     </application>
