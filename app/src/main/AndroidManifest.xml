@@ -70,5 +70,8 @@
             <!-- END Coding Kembali Ke Menu Utama-->
         </activity>
 
+        <activity
+            android:name=".MainActivity"/>
+
     </application>
 </manifest>
