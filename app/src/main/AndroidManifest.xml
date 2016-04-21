@@ -10,7 +10,7 @@
         android:theme="@style/CustomActionBarTheme">
 
         <activity
-            android:name=".HomeScreen">
+            android:name=".RegistrasiDistributor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -34,7 +34,7 @@
             android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity"
             android:theme="@style/AppTheme.Dark"/>
 
-        <activity android:name=".RegistrasiDistributor"/>
+        <activity android:name=".HomeScreen"/>
 
         <activity
             android:name=".KirimOrder"

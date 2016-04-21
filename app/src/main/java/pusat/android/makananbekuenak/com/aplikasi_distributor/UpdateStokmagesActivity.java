@@ -49,14 +49,6 @@ public class UpdateStokmagesActivity extends Activity {
     	item_details.setImageNumber(2);
     	results.add(item_details);
 
-		item_details = new UpdateStokItemDetails();
-		item_details.setName("003");
-		item_details.setItemDescription("satria biongo");
-		item_details.setPrice("Rp 3250.00");
-		item_details.setImageNumber(3);
-		results.add(item_details);
-
-
     	return results;
     }
 }
