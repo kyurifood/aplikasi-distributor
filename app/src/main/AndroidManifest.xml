@@ -18,6 +18,11 @@
         </activity>
 
         <activity
+            android:name=".UpdateStokmagesActivity"
+            android:label="updatestok">
+        </activity>
+
+        <activity
             android:name=".EditdataPribadi"
             android:label="editdatapribadi">
         </activity>
@@ -28,8 +33,6 @@
         <activity
             android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity"
             android:theme="@style/AppTheme.Dark"/>
-
-        <activity android:name=".UpdateStokmagesActivity"/>
 
         <activity android:name=".RegistrasiDistributor"/>
 
