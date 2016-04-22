@@ -1,5 +1,3 @@
-
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,5 +10,4 @@
         android:divider="@android:color/holo_green_dark"
         android:dividerHeight="1dp"
         android:id="@+id/listview" />
-
 </LinearLayout>

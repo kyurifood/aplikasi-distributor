@@ -14,8 +14,8 @@ public class HomeScreen extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
 
-        //Intent intent = new Intent(this, LoginActivity.class);
-        //startActivity(intent);
+       // Intent intent = new Intent(this, LoginActivity.class);
+       // startActivity(intent);
 
 //        Button produk=(Button)findViewById(R.id.produk);
 //        produk.setOnClickListener(new View.OnClickListener() {

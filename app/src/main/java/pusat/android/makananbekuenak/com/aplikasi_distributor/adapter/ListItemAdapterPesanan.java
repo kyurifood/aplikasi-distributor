@@ -90,7 +90,7 @@ public class ListItemAdapterPesanan extends BaseAdapter {
                                 ((MainActivity) context).NotifikasiResi();
                                 break;
                             case R.id.dua:
-                                Toast.makeText(context, item.getTitle(), Toast.LENGTH_SHORT).show();
+                                ((MainActivity) context).UpdatePenerimaan();
                                 break;
                             default:
                                 Toast.makeText(context, item.getTitle(), Toast.LENGTH_SHORT).show();

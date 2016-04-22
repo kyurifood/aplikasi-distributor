@@ -19,32 +19,17 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp">
 
-        <EditText
-            android:id="@+id/nmOrder"
-            android:hint="Nomor Order"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.55"
-            android:ems="10">
-            <requestFocus/>
-        </EditText>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_gravity="center_horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp">
-
-         <EditText
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+         <EditText android:textColor="@color/black"
             android:id="@+id/nmPenerima"
             android:hint="Nama Penerima"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.55"
-            android:ems="10" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
 
@@ -56,36 +41,27 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp">
 
-        <EditText
-            android:id="@+id/nmMarket"
-            android:hint="Nama Marketer"
-            android:layout_width="0dp"
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.55"
-            android:ems="10" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_gravity="center_horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.55"
-            android:orientation="horizontal" >
-
-            <EditText
-                android:id="@+id/nominal"
-                android:hint="Nominal"
-                android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:textColor="@color/black"
+                android:id="@+id/tgl_penerimaan"
+                android:hint="Tanggal Penerimaan"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10" />
-        </LinearLayout>
+                />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
     </LinearLayout>
 
     <LinearLayout
@@ -100,17 +76,28 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.75"
             android:orientation="horizontal"
-            android:gravity="right">
+            android:gravity="center"
+            android:layout_marginBottom="18dp">
 
             <Button
-                android:id="@+id/btnSubmit"
+                android:id="@+id/btnBtl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="5"
                 android:background="#000000"
                 android:textColor="#ffffff"
-                android:text="Kirim"
-                android:layout_marginRight="50dp"/>
+                android:text="Batal"
+                android:layout_marginRight="6dp"/>
+
+            <Button
+                android:id="@+id/btnKirim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="5"
+                android:background="#000000"
+                android:textColor="#ffffff"
+                android:text="Proses"
+                android:layout_marginLeft="3dp"/>
         </LinearLayout>
     </LinearLayout>
     </LinearLayout>
