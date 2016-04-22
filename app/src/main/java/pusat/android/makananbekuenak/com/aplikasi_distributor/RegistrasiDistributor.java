@@ -1,10 +1,13 @@
 package pusat.android.makananbekuenak.com.aplikasi_distributor;
 
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,12 +37,12 @@ public class RegistrasiDistributor extends AppCompatActivity {
     AlertDialog.Builder addNewItemDialogBuilder = null;
     AlertDialog addNewItemDialog = null;
     View promptsView;
+    TextInputLayout lbrek;
 
     private Spinner spinnerbank;
 
+    EditText txtkode, txtnama, txthp, txtalamat, txtkodepos, txtemail, txtrek, txtpemilik, txtcabang, txtpas, txtcpas;
 
-
-    EditText txtkode, txtnama, txthp, txtalamat, txtkodepos, txtemail, txtrek, txtpemilik, txtcabang ;
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
     private Matcher matcher;
@@ -51,6 +54,8 @@ public class RegistrasiDistributor extends AppCompatActivity {
         setContentView(R.layout.registrasi_distributor);
 
 
+        txtpas = (EditText)findViewById(R.id.pasword);
+        //txtcpas = (EditText)findViewById(R.id.cpasword);
         txtemail = (EditText) findViewById(R.id.editemail);
         txtkode = (EditText) findViewById(R.id.editkode);
         txtnama = (EditText) findViewById(R.id.editnama);
@@ -68,9 +73,9 @@ public class RegistrasiDistributor extends AppCompatActivity {
         lSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
 
         lvItem = (ListView) findViewById(R.id.lv_item);
-        ViewGroup.LayoutParams listViewParams = (ViewGroup.LayoutParams) lvItem.getLayoutParams();
-        listViewParams.height = 835;
-        lvItem.requestLayout();
+//        ViewGroup.LayoutParams listViewParams = (ViewGroup.LayoutParams) lvItem.getLayoutParams();
+//        listViewParams.height = 360;
+//        lvItem.requestLayout();
 
         lvItem.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -79,62 +84,6 @@ public class RegistrasiDistributor extends AppCompatActivity {
                 return false;
             }
         });
-
-
-        Button btndaf = (Button)findViewById(R.id.btndaf);
-        btndaf.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View rootView) {
-
-//                String s = (String)(spinregional.getSelectedItem());
-//                set(s);
-//                String s = (String)(spinregional.getSelectedItem());
-//                selection.setText(s);
-
-
-                String email = txtemail.getText().toString();
-                String kode = txtkode.getText().toString();
-                String nama = txtnama.getText().toString();
-                String hp = txthp.getText().toString();
-                String alamat = txtalamat.getText().toString();
-                String kodepos = txtkodepos.getText().toString();
-
-                if (!validateKode(kode)) {
-                    txtkode.setError("silahkan masukan kode");
-                    {
-
-                        Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian kode", Toast.LENGTH_SHORT).show();
-                    }
-                } else if (!validateNama(nama)) {
-                    txtnama.setError("silahkan masukan nama anda");
-                    {
-                        Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian nama", Toast.LENGTH_SHORT).show();
-                    }
-                } else if (!validateEmail(email)) {
-                    txtemail.setError("silahkan masukan email");
-                    {
-                        Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian email", Toast.LENGTH_SHORT).show();
-                    }
-                } else if (!validateHp(hp)) {
-                    txthp.setError("silahkan masukan nomor hand phone");
-                    {
-                        Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian phone", Toast.LENGTH_SHORT).show();
-                    }
-                } else if (!validateAlamat(alamat)) {
-                    txtalamat.setError("silahkan masukan alamat anda");
-                    {
-                        Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian alamat", Toast.LENGTH_SHORT).show();
-                    }
-                } else if (!validateKodepos(kodepos)) {
-                    txtkodepos.setError("silahkan masukan kode pos");
-                    {
-                        Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian kode pos", Toast.LENGTH_SHORT).show();
-                    }
-
-                } else submitForm();
-            }
-        });
-
         Button addNewItem = (Button) findViewById(R.id.btnbank);
         addNewItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,6 +100,7 @@ public class RegistrasiDistributor extends AppCompatActivity {
 
         promptsView = LayoutInflater.from(RegistrasiDistributor.this).inflate(R.layout.bank_distributor, null);
 
+
         final Spinner mSpinner= (Spinner) promptsView.findViewById(R.id.spinnerbank);
         txtrek = (EditText) promptsView.findViewById(R.id.editText);
         txtpemilik = (EditText) promptsView.findViewById(R.id.editText2);
@@ -165,10 +115,10 @@ public class RegistrasiDistributor extends AppCompatActivity {
 
         {
             @Override
-            public void onClick (View v){
+            public void onClick(View v) {
                 if (!hasError()) {
                     ItemDistributor item = new ItemDistributor();
-                    String s = (String)(spinnerbank.getSelectedItem());
+                    String s = (String) (spinnerbank.getSelectedItem());
                     item.setBank(s);
                     item.setRekening(txtrek.getText().toString());
                     item.setPemilik(txtpemilik.getText().toString());
@@ -181,6 +131,61 @@ public class RegistrasiDistributor extends AppCompatActivity {
                     } else {
                         adapter.addItem(item);
                     }
+                    addNewItemDialog.dismiss();
+                }
+            }
+        });
+
+        Button cancel = (Button) promptsView.findViewById(R.id.cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNewItemDialog.dismiss();
+            }
+        });
+
+        addNewItemDialogBuilder.setView(promptsView);
+        addNewItemDialogBuilder.setCancelable(false);
+        addNewItemDialog = addNewItemDialogBuilder.create();
+        addNewItemDialog.show();
+    }
+
+    public void showEditDialog(final int position, ItemDistributor item) {
+        if (addNewItemDialogBuilder == null) {
+            addNewItemDialogBuilder = new AlertDialog.Builder(RegistrasiDistributor.this, R.style.DialogStyle);
+        }
+
+        promptsView = LayoutInflater.from(RegistrasiDistributor.this).inflate(R.layout.bank_distributor, null);
+
+        Spinner mSpinner= (Spinner) promptsView.findViewById(R.id.spinnerbank);
+        txtrek = (EditText) promptsView.findViewById(R.id.editText);
+        txtrek.setText(item.getRekening());
+        txtpemilik = (EditText) promptsView.findViewById(R.id.editText2);
+        txtpemilik.setText(item.getPemilik());
+        txtcabang = (EditText) promptsView.findViewById(R.id.editText3);
+        txtcabang.setText(item.getCabang());
+        spinnerbank = (Spinner) promptsView.findViewById(R.id.spinnerbank);
+        String s = (String)(spinnerbank.getSelectedItem());
+        item.setBank(s);
+
+        mSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
+
+
+        Button save = (Button) promptsView.findViewById(R.id.ok);
+        save.setOnClickListener(new View.OnClickListener()
+
+        {
+            @Override
+            public void onClick (View v){
+                if (!hasError()) {
+                    ItemDistributor newitem = new ItemDistributor();
+                    String s = (String)(spinnerbank.getSelectedItem());
+                    newitem.setBank(s);
+                    newitem.setRekening(txtrek.getText().toString());
+                    newitem.setPemilik(txtpemilik.getText().toString());
+                    newitem.setCabang(txtcabang.getText().toString());
+
+                    adapter.editItem(position, newitem);
                     addNewItemDialog.dismiss();
                 }
             }
@@ -213,6 +218,13 @@ public class RegistrasiDistributor extends AppCompatActivity {
         matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
+    public boolean validasiPass(String pass) {
+        return pass.length() > 4;
+    }
+    //    public boolean validasiCPass(String cpass) {
+//        return cpass.length() > 0;
+//    }
     public boolean validateKode(String kode) {
         return kode.length() > 0;
     }
@@ -228,6 +240,7 @@ public class RegistrasiDistributor extends AppCompatActivity {
     public boolean validateKodepos(String kodepos) {
         return kodepos.length() > 0;
     }
+
     private boolean hasError(){
         boolean isError = false;
         if(TextUtils.isEmpty(txtrek.getText().toString())){
@@ -258,4 +271,75 @@ public class RegistrasiDistributor extends AppCompatActivity {
 
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_registrasi, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_proses) {
+
+            String email = txtemail.getText().toString();
+            String pass = txtpas.getText().toString();
+            //String cpass = txtcpas.getText().toString();
+            String kode = txtkode.getText().toString();
+            String nama = txtnama.getText().toString();
+            String hp = txthp.getText().toString();
+            String alamat = txtalamat.getText().toString();
+            String kodepos = txtkodepos.getText().toString();
+
+            if (!validateKode(kode)) {
+                txtkode.setError("silahkan masukan kode");
+                {
+
+                    Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian kode", Toast.LENGTH_SHORT).show();
+                }
+            } else if (!validateNama(nama)) {
+                txtnama.setError("silahkan masukan nama anda");
+                {
+                    Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian nama", Toast.LENGTH_SHORT).show();
+                }
+            } else if (!validateEmail(email)) {
+                txtemail.setError("silahkan masukan email");
+                {
+                    Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian email", Toast.LENGTH_SHORT).show();
+                }
+            }else if (!validasiPass(pass)) {
+                txtpas.setError("Minial 4 karakter");
+                {
+                    Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian password", Toast.LENGTH_SHORT).show();
+                }
+            }else if (!validateHp(hp)) {
+                txthp.setError("silahkan masukan nomor hand phone");
+                {
+                    Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian phone", Toast.LENGTH_SHORT).show();
+                }
+            } else if (!validateAlamat(alamat)) {
+                txtalamat.setError("silahkan masukan alamat anda");
+                {
+                    Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian alamat", Toast.LENGTH_SHORT).show();
+                }
+            } else if (!validateKodepos(kodepos)) {
+                txtkodepos.setError("silahkan masukan kode pos");
+                {
+                    Toast.makeText(RegistrasiDistributor.this, "Kesalahan dalam pengisian kode pos", Toast.LENGTH_SHORT).show();
+                }
+
+            } else submitForm();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
