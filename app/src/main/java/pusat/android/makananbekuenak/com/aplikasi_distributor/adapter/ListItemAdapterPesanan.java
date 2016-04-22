@@ -102,9 +102,9 @@ public class ListItemAdapterPesanan extends BaseAdapter {
                 final PopupMenu popup = new PopupMenu(context, pop);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
 
-                MenuItem mItem = popup.getMenu().findItem(R.id.dua);
-                if(item.isLunas()==true && item.isDikirim() == true);
-                mItem.setEnabled(false);
+               // MenuItem mItem = popup.getMenu().findItem(R.id.dua);
+               // if(item.isLunas()==true && item.isDikirim() == true);
+               // mItem.setEnabled(false);
 
                     popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                         public boolean onMenuItemClick(MenuItem menuItem) {

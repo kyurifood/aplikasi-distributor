@@ -10,7 +10,12 @@
         android:theme="@style/CustomActionBarTheme">
 
 
-        <activity android:name=".HomeScreen" >
+        <activity android:name=".HomeScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
@@ -28,11 +33,6 @@
         <activity
             android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.LoginActivity"
             android:theme="@style/AppTheme.Dark">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity
             android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity"
