@@ -13,6 +13,16 @@ public class Item_Pesanan {
     private boolean button;
     private boolean button2;
     private boolean dikirim;
+    private boolean diterima;
+    private boolean lunas;
+
+    public boolean isLunas() {
+        return lunas;
+    }
+
+    public void setLunas(boolean lunas) {
+        this.lunas = lunas;
+    }
 
     public boolean isDiterima() {
         return diterima;
@@ -21,8 +31,6 @@ public class Item_Pesanan {
     public void setDiterima(boolean diterima) {
         this.diterima = diterima;
     }
-
-    private boolean diterima;
 
 
     public boolean isDikirim() {

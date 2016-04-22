@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ActionMode;
@@ -13,12 +14,15 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -133,10 +137,8 @@ public class MainActivity extends AppCompatActivity {
                 adapter.unselectAllItems();
             }
         });
-
-
     }
-
+    
     public void NotifikasiResi(final Item_Pesanan item) {
         //---
         final Dialog dialog = new Dialog(MainActivity.this);
@@ -146,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
         modeKirim = (Spinner) dialog.findViewById(R.id.l_pengiriman);
         nomoResi = (EditText)dialog.findViewById(R.id.nmrResi);
-        btnPrs = (Button)dialog.findViewById(R.id.btnProses);
+        btnPrs = (Button)dialog.findViewById(R.id.btn_Proses);
         btnCancel = (Button)dialog.findViewById(R.id.btnKembali);
         dialog.show();
 
@@ -161,7 +163,8 @@ public class MainActivity extends AppCompatActivity {
                     {
                         Toast.makeText(MainActivity.this, "Kesalahan Pengisian Nomor Resi", Toast.LENGTH_SHORT).show();
                     }
-                } else cekResi();
+
+                }else cekResi();
             }
 
             private void cekResi() {

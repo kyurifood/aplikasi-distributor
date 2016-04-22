@@ -59,11 +59,10 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         TextView bank = (TextView) convertView.findViewById(R.id.bank);
         TextView nominal = (TextView) convertView.findViewById(R.id.nominal);
 
-
         Button btnAction1 = (Button) convertView.findViewById(R.id.btn_action_1);
         Button btnAction2 = (Button) convertView.findViewById(R.id.btn_action_2);
         final Button pop = (Button) convertView.findViewById(R.id.btn_pop);
-        CheckBox lunas = (CheckBox) convertView.findViewById(R.id.item_check2);
+        CheckBox lunas = (CheckBox) convertView.findViewById(R.id.cb_lunas);
         CheckBox diterima = (CheckBox) convertView.findViewById(R.id.cb_diterima);
         diterima.setChecked(item.isDiterima());
         CheckBox dikirim = (CheckBox) convertView.findViewById(R.id.cb_dikirim);
@@ -74,7 +73,6 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         nama.setText(item.getNama());
         bank.setText(item.getBank());
         nominal.setText(item.getNominal());
-
 
         btnAction1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,32 +94,36 @@ public class ListItemAdapterPesanan extends BaseAdapter {
             }
         });
 
-
         //opsi menu
         pop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(context, pop);
+
+                final PopupMenu popup = new PopupMenu(context, pop);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
 
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem menuItem) {
-                        switch (menuItem.getItemId()) {
-                            case R.id.satu:
-                                ((MainActivity) context).NotifikasiResi(item);
-                                updatePos = position;
-                                break;
-                            case R.id.dua:
-                                ((MainActivity) context).UpdatePenerimaan(item);
-                                updatePos = position;
-                                break;
-                            default:
-                                Toast.makeText(context, menuItem.getTitle(), Toast.LENGTH_SHORT).show();
-                                break;
+                MenuItem mItem = popup.getMenu().findItem(R.id.dua);
+                if(item.isLunas()==true && item.isDikirim() == true);
+                mItem.setEnabled(false);
+
+                    popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        public boolean onMenuItemClick(MenuItem menuItem) {
+                            switch (menuItem.getItemId()) {
+                                case R.id.satu:
+                                    ((MainActivity) context).NotifikasiResi(item);
+                                    updatePos = position;
+                                    break;
+                                case R.id.dua:
+                                    ((MainActivity) context).UpdatePenerimaan(item);
+                                    updatePos = position;
+                                    break;
+                                default:
+                                    Toast.makeText(context, menuItem.getTitle(), Toast.LENGTH_SHORT).show();
+                                    break;
+                            }
+                            return true;
                         }
-                        return true;
-                    }
-                });
+                    });
 
                 popup.show();
             }

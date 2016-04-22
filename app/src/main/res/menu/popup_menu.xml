@@ -7,6 +7,6 @@
 
     <item
         android:id="@+id/dua"
-        android:title="Update Status Pembayaran"/>
+        android:title="Update Status Penerimaan"/>
 
 </menu>
