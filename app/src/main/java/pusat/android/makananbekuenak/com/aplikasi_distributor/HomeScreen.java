@@ -63,7 +63,7 @@ public class HomeScreen extends AppCompatActivity{
 
     public void btn_laporan(View v) {
 
-        Intent panggil_class = new Intent(this, pusat.android.makananbekuenak.com.aplikasi_distributor.Laporan.class);
+        Intent panggil_class = new Intent(this, pusat.android.makananbekuenak.com.aplikasi_distributor.cekbox.class);
         startActivity(panggil_class);
     }
 

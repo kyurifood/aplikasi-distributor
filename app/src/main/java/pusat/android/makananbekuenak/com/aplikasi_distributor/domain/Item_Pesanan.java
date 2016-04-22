@@ -12,6 +12,27 @@ public class Item_Pesanan {
     private boolean selected;
     private boolean button;
     private boolean button2;
+    private boolean dikirim;
+
+    public boolean isDiterima() {
+        return diterima;
+    }
+
+    public void setDiterima(boolean diterima) {
+        this.diterima = diterima;
+    }
+
+    private boolean diterima;
+
+
+    public boolean isDikirim() {
+
+        return dikirim;
+    }
+
+    public void setDikirim(boolean dikirim) {
+        this.dikirim = dikirim;    }
+
 
     public boolean isButton2() {
         return button2;

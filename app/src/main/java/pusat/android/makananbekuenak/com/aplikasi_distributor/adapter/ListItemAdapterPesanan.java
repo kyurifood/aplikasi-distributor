@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.Item_Pesana
 public class ListItemAdapterPesanan extends BaseAdapter {
     public Context context;
     private List<Item_Pesanan> items;
+    private int updatePos;
 
     public ListItemAdapterPesanan(Context context, List<Item_Pesanan> items) {
         this.context = context;
@@ -45,7 +47,7 @@ public class ListItemAdapterPesanan extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         if(convertView == null)
             convertView = LayoutInflater.from(context).inflate(R.layout.list_item_layout_pesanan, parent, false);
 
@@ -61,6 +63,11 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         Button btnAction1 = (Button) convertView.findViewById(R.id.btn_action_1);
         Button btnAction2 = (Button) convertView.findViewById(R.id.btn_action_2);
         final Button pop = (Button) convertView.findViewById(R.id.btn_pop);
+        CheckBox lunas = (CheckBox) convertView.findViewById(R.id.item_check2);
+        CheckBox diterima = (CheckBox) convertView.findViewById(R.id.cb_diterima);
+        diterima.setChecked(item.isDiterima());
+        CheckBox dikirim = (CheckBox) convertView.findViewById(R.id.cb_dikirim);
+        dikirim.setChecked(item.isDikirim());
 
         no_order.setText(item.getNo_order());
         tanggal_pesan.setText(item.getTanggal_pesan());
@@ -76,6 +83,20 @@ public class ListItemAdapterPesanan extends BaseAdapter {
             }
         });
 
+        lunas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (((CheckBox) v).isChecked()){
+                    pop.setEnabled(true);
+                }
+                else {
+                    pop.setEnabled(false);
+                }
+            }
+        });
+
+
         //opsi menu
         pop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,16 +105,18 @@ public class ListItemAdapterPesanan extends BaseAdapter {
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
 
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        switch (menuItem.getItemId()) {
                             case R.id.satu:
-                                ((MainActivity) context).NotifikasiResi();
+                                ((MainActivity) context).NotifikasiResi(item);
+                                updatePos = position;
                                 break;
                             case R.id.dua:
-                                ((MainActivity) context).UpdatePenerimaan();
+                                ((MainActivity) context).UpdatePenerimaan(item);
+                                updatePos = position;
                                 break;
                             default:
-                                Toast.makeText(context, item.getTitle(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, menuItem.getTitle(), Toast.LENGTH_SHORT).show();
                                 break;
                         }
                         return true;
@@ -105,10 +128,8 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         });
         //batas opsi menu
 
-
         return convertView;
     }
-
 
 
     public void unselectAllItems(){
@@ -116,5 +137,28 @@ public class ListItemAdapterPesanan extends BaseAdapter {
             Item_Pesanan item = items.get(i);
             item.setSelected(false);
         }
+    }
+
+    public void updateItem(Item_Pesanan item_pesanan){
+        items.set(updatePos, item_pesanan);
+        notifyDataSetChanged();
+    }
+
+    public void refreshList(){
+        notifyDataSetChanged();
+    }
+
+    public void kirimOrder(){
+        Item_Pesanan item = items.get(updatePos);
+        item.setDikirim(true);
+        items.set(updatePos, item);
+        notifyDataSetChanged();
+    }
+
+    public void UpdataStatus(){
+        Item_Pesanan item = items.get(updatePos);
+        item.setDiterima(true);
+        items.set(updatePos, item);
+        notifyDataSetChanged();
     }
 }
