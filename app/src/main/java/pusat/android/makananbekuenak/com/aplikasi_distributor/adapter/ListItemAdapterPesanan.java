@@ -60,9 +60,9 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         TextView nominal = (TextView) convertView.findViewById(R.id.nominal);
 
         Button btnAction1 = (Button) convertView.findViewById(R.id.btn_action_1);
-        Button btnAction2 = (Button) convertView.findViewById(R.id.btn_action_2);
+        final Button btnAction2 = (Button) convertView.findViewById(R.id.btn_action_2);
         final Button pop = (Button) convertView.findViewById(R.id.btn_pop);
-        CheckBox lunas = (CheckBox) convertView.findViewById(R.id.cb_lunas);
+        final CheckBox lunas = (CheckBox) convertView.findViewById(R.id.cb_lunas);
         CheckBox diterima = (CheckBox) convertView.findViewById(R.id.cb_diterima);
         diterima.setChecked(item.isDiterima());
         CheckBox dikirim = (CheckBox) convertView.findViewById(R.id.cb_dikirim);
@@ -77,10 +77,16 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         btnAction1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, item.getNo_order(), Toast.LENGTH_SHORT).show();
+                lunas.setChecked(true);
+                if (lunas.isChecked()){
+                    pop.setEnabled(true);
+                }else {
+                    pop.setEnabled(false);
+                }
             }
         });
 
+        /*
         lunas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +98,7 @@ public class ListItemAdapterPesanan extends BaseAdapter {
                     pop.setEnabled(false);
                 }
             }
-        });
+        });*/
 
         //opsi menu
         pop.setOnClickListener(new View.OnClickListener() {
@@ -101,10 +107,13 @@ public class ListItemAdapterPesanan extends BaseAdapter {
 
                 final PopupMenu popup = new PopupMenu(context, pop);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-
-               // MenuItem mItem = popup.getMenu().findItem(R.id.dua);
-               // if(item.isLunas()==true && item.isDikirim() == true);
-               // mItem.setEnabled(false);
+                /*
+                MenuItem mItem = popup.getMenu().findItem(R.id.dua);
+                if(item.isLunas()==true && item.isDikirim() == true){
+                    mItem.setEnabled(true);
+                }else {
+                    mItem.setEnabled(false);
+                }*/
 
                     popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                         public boolean onMenuItemClick(MenuItem menuItem) {

@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     ListView lvItem;
     ListItemAdapterPesanan adapter;
     Button btnPrs,btnCancel, btnKirim, btnBatal;
-    CheckBox dikirim, diterima;
     EditText nomoResi, penerima, tgl_penerima;
     Spinner modeKirim;
 
@@ -50,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        dikirim = (CheckBox) findViewById(R.id.cb_dikirim);
 
         List<Item_Pesanan> items = new ArrayList<>();
         Item_Pesanan item1 = new Item_Pesanan();
@@ -200,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
 
         //penerima.setText(item.getNama());
         //tgl_penerima.setText(item.getTanggal_pesan());
+
         // get the current date
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
@@ -239,12 +237,10 @@ public class MainActivity extends AppCompatActivity {
 
             private void cekData() {
                 adapter.UpdataStatus();
-                /*
-                ((ListItemAdapterPesanan) lvItem.getAdapter()).refreshList();
-                item.setNama(penerima.getText().toString());
-                item.setTanggal_pesan(tgl_penerima.getText().toString());
-                adapter.updateItem(item);
-                */
+                //((ListItemAdapterPesanan) lvItem.getAdapter()).refreshList();
+                //item.setNama(penerima.getText().toString());
+                //item.setTanggal_pesan(tgl_penerima.getText().toString());
+                //adapter.updateItem(item);
                         Toast.makeText(
                         MainActivity.this, "Berhasil : Penerima " + penerima.getText() +
                                 ", Tanggal Penerimaan : " + tgl_penerima.getText(), Toast.LENGTH_LONG).show();

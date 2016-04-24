@@ -8,7 +8,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -17,7 +16,8 @@
             android:id="@+id/nmPenerima"
             android:hint="Nama Penerima"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+             android:inputType="textPersonName"/>
         </android.support.design.widget.TextInputLayout>
 
 
