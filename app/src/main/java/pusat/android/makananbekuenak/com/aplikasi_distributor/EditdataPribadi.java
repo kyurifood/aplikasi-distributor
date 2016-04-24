@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +26,9 @@ import java.util.regex.Pattern;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.adapter.ListItemDistributor;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ItemDistributor;
 
-
+/**
+ * Created by rinaldy on 07/04/16.
+ */
 public class EditdataPribadi extends AppCompatActivity {
 
     ListView lvItem;
@@ -44,7 +47,6 @@ public class EditdataPribadi extends AppCompatActivity {
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
     private Matcher matcher;
 
-
     List<ItemDistributor> items = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +54,8 @@ public class EditdataPribadi extends AppCompatActivity {
         setContentView(R.layout.editdatapribadi);
 
 
+
         txtemail = (EditText) findViewById(R.id.editemail);
-        txtkode = (EditText) findViewById(R.id.editkode);
         txtnama = (EditText) findViewById(R.id.editnama);
         txthp = (EditText) findViewById(R.id.edithp);
         txtalamat = (EditText) findViewById(R.id.editalamat);
@@ -181,7 +183,7 @@ public class EditdataPribadi extends AppCompatActivity {
                     newitem.setPemilik(txtpemilik.getText().toString());
                     newitem.setCabang(txtcabang.getText().toString());
 
-                    adapter.Item(position, newitem);
+                    adapter.editItem(position, newitem);
                     addNewItemDialog.dismiss();
                 }
             }
@@ -206,7 +208,7 @@ public class EditdataPribadi extends AppCompatActivity {
 
     private void submitForm() {
         // Submit your form here. your form is valid
-        Toast.makeText(EditdataPribadi.this, "Update Data Pribadi berhasil", Toast.LENGTH_SHORT).show();
+        Toast.makeText(EditdataPribadi.this, "registrasi berhasil", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -281,6 +283,8 @@ public class EditdataPribadi extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
         if (id == R.id.action_pros) {
 
             String email = txtemail.getText().toString();

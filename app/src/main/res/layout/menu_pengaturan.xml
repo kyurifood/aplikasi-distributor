@@ -28,6 +28,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:onClick="btn_info"
             android:text="Info Pribadi"
             android:id="@+id/info_pribadi"
             android:layout_gravity="center_horizontal" />

@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/action_pros"
-        android:title="EditTampiPribadi"
-        android:icon="@drawable/abc_btn_check_to_on_mtrl_015"
+    <item android:id="@+id/action_proses"
+        android:title="Registrasi"
+        android:icon="@drawable/t"
         android:orderInCategory="100"
         app:showAsAction="always" />
 
