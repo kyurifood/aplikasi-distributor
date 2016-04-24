@@ -35,7 +35,7 @@ public class HomeScreen extends AppCompatActivity{
             public void onClick(View arg0) {
 
                 Intent myIntent = new Intent(HomeScreen.this,
-                        Kosong.class);
+                        Laporan.class);
                 startActivity(myIntent);
             }
         });
