@@ -15,8 +15,8 @@
             style="@style/Hijau"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Ganti Password"
-            android:id="@+id/ganti_password"
+            android:text="LAPORAN TRANSAKSI PER PRODUK"
+            android:id="@+id/btn_produk"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
@@ -30,8 +30,8 @@
             style="@style/Hijau"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Info Pribadi"
-            android:id="@+id/info_pribadi"
+            android:text="LAPORAN TRANSAKSI PER MAKETER"
+            android:id="@+id/btn_marketer"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
@@ -47,8 +47,8 @@
             style="@style/Hijau"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Notifikasi"
-            android:id="@+id/notifkasi"
+            android:text="LAPORAN TRANSAKSI PER DISTIBUTOR"
+            android:id="@+id/btn_distributor"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
