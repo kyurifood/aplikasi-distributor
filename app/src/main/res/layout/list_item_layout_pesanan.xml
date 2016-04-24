@@ -10,7 +10,8 @@
         android:gravity="right">
         <Button style="@style/OrangeButton"
             android:text="OPSI"
-            android:id="@+id/btn_pop"/>
+            android:id="@+id/btn_pop"
+            android:enabled="false"/>
     </LinearLayout>
 
     <LinearLayout
@@ -90,32 +91,34 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textColor="@android:color/black"
+                android:clickable="false"
+                android:checked="true"
+                android:id="@+id/cb_baru"/>
+            <CheckBox
+                style="@style/Text.Label"
+                android:theme="@style/Platform.AppCompat.Light"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="@android:color/black"
                 android:enabled="true"
-                android:id="@+id/item_check1" />
+                android:id="@+id/cb_lunas"
+                />
             <CheckBox
                 style="@style/Text.Label"
                 android:theme="@style/Platform.AppCompat.Light"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textColor="@android:color/black"
-                android:enabled="false"
-                android:id="@+id/item_check2" />
+                android:clickable="false"
+                android:id="@+id/cb_dikirim"/>
             <CheckBox
                 style="@style/Text.Label"
                 android:theme="@style/Platform.AppCompat.Light"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textColor="@android:color/black"
-                android:enabled="false"
-                android:id="@+id/item_check3" />
-            <CheckBox
-                style="@style/Text.Label"
-                android:theme="@style/Platform.AppCompat.Light"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:textColor="@android:color/black"
-                android:enabled="false"
-                android:id="@+id/item_check4" />
+                android:clickable="false"
+                android:id="@+id/cb_diterima"/>
         </LinearLayout>
 
 
