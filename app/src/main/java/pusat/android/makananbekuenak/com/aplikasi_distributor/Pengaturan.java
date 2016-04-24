@@ -2,6 +2,7 @@ package pusat.android.makananbekuenak.com.aplikasi_distributor;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 
 public class Pengaturan extends AppCompatActivity{
 
@@ -9,5 +10,7 @@ public class Pengaturan extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_pengaturan);
+
+
     }
 }
