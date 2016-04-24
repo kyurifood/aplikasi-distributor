@@ -161,6 +161,8 @@
         <item name="colorControlActivated">@color/colorPrimary</item>
     </style>
 
+
+
     <style name="EditText">
         <item name="android:theme">@style/EditTextTheme</item>
         <item name="android:layout_width">match_parent</item>

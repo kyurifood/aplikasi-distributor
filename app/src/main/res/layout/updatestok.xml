@@ -33,14 +33,7 @@
         android:layout_toRightOf="@id/photo" />
 
     <Switch
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/switch1"
-        android:layout_alignBottom="@+id/price"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:checked="false" />
-
-
+        android:id="@+id/mySwitch"/>
 </RelativeLayout>
