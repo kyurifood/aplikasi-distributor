@@ -65,7 +65,7 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         final CheckBox lunas = (CheckBox) convertView.findViewById(R.id.cb_lunas);
         CheckBox diterima = (CheckBox) convertView.findViewById(R.id.cb_diterima);
         diterima.setChecked(item.isDiterima());
-        CheckBox dikirim = (CheckBox) convertView.findViewById(R.id.cb_dikirim);
+        final CheckBox dikirim = (CheckBox) convertView.findViewById(R.id.cb_dikirim);
         dikirim.setChecked(item.isDikirim());
 
         no_order.setText(item.getNo_order());
@@ -80,6 +80,7 @@ public class ListItemAdapterPesanan extends BaseAdapter {
                 lunas.setChecked(true);
                 if (lunas.isChecked()){
                     pop.setEnabled(true);
+                    Toast.makeText(context, "Lunas",  Toast.LENGTH_SHORT).show();
                 }else {
                     pop.setEnabled(false);
                 }
@@ -107,13 +108,13 @@ public class ListItemAdapterPesanan extends BaseAdapter {
 
                 final PopupMenu popup = new PopupMenu(context, pop);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-                /*
+
                 MenuItem mItem = popup.getMenu().findItem(R.id.dua);
-                if(item.isLunas()==true && item.isDikirim() == true){
+                if (dikirim.isChecked()){
                     mItem.setEnabled(true);
                 }else {
                     mItem.setEnabled(false);
-                }*/
+                }
 
                     popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                         public boolean onMenuItemClick(MenuItem menuItem) {
