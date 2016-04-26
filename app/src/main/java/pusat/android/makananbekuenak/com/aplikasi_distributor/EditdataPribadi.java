@@ -377,6 +377,10 @@ public class EditdataPribadi extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.reset){
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 

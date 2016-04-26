@@ -16,7 +16,7 @@
         android:id="@+id/linearLayout">
         <TextView
             android:layout_height="wrap_content"
-            android:text="Tampilan Data Pribadi"
+            android:text="Data Pribadi"
             android:layout_width="fill_parent"
             android:padding="5dp"
             android:gravity="center_horizontal"
