@@ -17,13 +17,13 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 	
 	private Integer[] imgid = {
 			R.drawable.produk,
-			R.drawable.produk,
-			R.drawable.produk,
-			R.drawable.produk,
+			R.drawable.karapao1,
+			R.drawable.karapao2,
+			R.drawable.karapao3,
 			R.drawable.produk,
 			R.drawable.produk
 			};
-	
+
 	public LayoutInflater l_Inflater;
 
 	public Context context;
@@ -46,7 +46,7 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 		return position;
 	}
 
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		ViewHolder holder;
 		if (convertView == null) {
 			convertView = l_Inflater.inflate(R.layout.updatestok, null);
@@ -74,10 +74,10 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 
 				if (isChecked) {
 					//ON
-					Toast.makeText(context, "Ada", Toast.LENGTH_LONG).show();
+					Toast.makeText(context, updateStokItemDetailsrrayList.get(position).getName() + ", " + updateStokItemDetailsrrayList.get(position).getItemDescription() + ", Ada", Toast.LENGTH_LONG).show();
 				} else {
 					//OFF
-					Toast.makeText(context, "Tidak Ada", Toast.LENGTH_LONG).show();
+					Toast.makeText(context, updateStokItemDetailsrrayList.get(position).getName() + ", " + updateStokItemDetailsrrayList.get(position).getItemDescription() + ", Tidak Ada", Toast.LENGTH_LONG).show();
 				}
 
 

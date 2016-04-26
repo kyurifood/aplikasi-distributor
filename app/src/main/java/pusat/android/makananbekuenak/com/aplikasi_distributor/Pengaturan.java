@@ -14,6 +14,9 @@ public class Pengaturan extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_pengaturan);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.black_ic_cogwheel);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         b_info = (Button) findViewById(R.id.info_pribadi);
         b_password = (Button) findViewById(R.id.ganti_password);
@@ -32,15 +35,16 @@ public class Pengaturan extends AppCompatActivity{
         b_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent callme = new Intent(getApplicationContext(), Kosong.class);
+                startActivity(callme);
             }
         });
         b_notifikasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent callme = new Intent(getApplicationContext(), Kosong.class);
+                startActivity(callme);
             }
         });
-
     }
 }
