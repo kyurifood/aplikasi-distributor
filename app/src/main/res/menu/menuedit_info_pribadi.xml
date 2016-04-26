@@ -5,7 +5,7 @@
 
     <item android:id="@+id/action_pros"
         android:title="EditTampiPribadi"
-        android:icon="@drawable/abc_btn_check_to_on_mtrl_015"
+        android:icon="@drawable/ic_content_save"
         android:orderInCategory="100"
         app:showAsAction="always" />
 

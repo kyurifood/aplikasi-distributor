@@ -1,5 +1,7 @@
 package pusat.android.makananbekuenak.com.aplikasi_distributor;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
@@ -41,11 +43,14 @@ public class EditdataPribadi extends AppCompatActivity {
 
     private Spinner spinnerbank;
 
-    EditText txtkode, txtnama, txthp, txtalamat, txtkodepos, txtemail, txtrek, txtpemilik, txtcabang, txtpas, txtcpas;
+    EditText txtnama, txthp, txtalamat, txtkodepos, txtemail, txtrek, txtpemilik, txtcabang, txtwa, txtpinbb;
+    String get_nama, get_hp, get_alamat, get_kodepos, get_email, get_rek, get_pemilik, get_cabang, get_wa, get_pinbb;
+    String var_nama, var_hp, var_alamat, var_kodepos, var_email, var_rek,var_pemilik, var_cabang, var_wa, var_pinbb;
 
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
     private Matcher matcher;
+
 
     List<ItemDistributor> items = new ArrayList<>();
     @Override
@@ -54,12 +59,13 @@ public class EditdataPribadi extends AppCompatActivity {
         setContentView(R.layout.editdatapribadi);
 
 
-
         txtemail = (EditText) findViewById(R.id.editemail);
         txtnama = (EditText) findViewById(R.id.editnama);
         txthp = (EditText) findViewById(R.id.edithp);
         txtalamat = (EditText) findViewById(R.id.editalamat);
         txtkodepos = (EditText) findViewById(R.id.editkodepos);
+        txtwa = (EditText) findViewById(R.id.editwa);
+        txtpinbb = (EditText) findViewById(R.id.editbb);
         Spinner mSpinner= (Spinner)findViewById(R.id.spinregional);
         Spinner pSpinner= (Spinner)findViewById(R.id.spinprov);
         Spinner kSpinner= (Spinner)findViewById(R.id.spinkec);
@@ -89,6 +95,24 @@ public class EditdataPribadi extends AppCompatActivity {
                 showAddDialog();
             }
         });
+
+        Bundle b = getIntent().getExtras();
+        get_nama = b.getString("panggil_nama");
+        get_email = b.getString("panggil_email");
+        get_hp = b.getString("panggil_hp");
+        get_alamat = b.getString("panggil_alamat");
+        get_kodepos = b.getString("panggil_kodepos");
+        get_wa = b.getString("panggil_wa");
+        get_pinbb = b.getString("panggil_pinbb");
+
+        txtnama.setText("" + get_nama);
+        txtemail.setText("" + get_email);
+        txthp.setText(""+ get_hp);
+        txtkodepos.setText(""+ get_kodepos);
+        txtalamat.setText("" + get_alamat);
+        txtwa.setText("" + get_wa);
+        txtpinbb.setText("" + get_pinbb);
+
     }
 
     public void showAddDialog() {
@@ -174,16 +198,22 @@ public class EditdataPribadi extends AppCompatActivity {
 
         {
             @Override
-            public void onClick (View v){
+            public void onClick(View v) {
                 if (!hasError()) {
-                    ItemDistributor newitem = new ItemDistributor();
-                    String s = (String)(spinnerbank.getSelectedItem());
-                    newitem.setBank(s);
-                    newitem.setRekening(txtrek.getText().toString());
-                    newitem.setPemilik(txtpemilik.getText().toString());
-                    newitem.setCabang(txtcabang.getText().toString());
+                    ItemDistributor item = new ItemDistributor();
+                    String s = (String) (spinnerbank.getSelectedItem());
+                    item.setBank(s);
+                    item.setRekening(txtrek.getText().toString());
+                    item.setPemilik(txtpemilik.getText().toString());
+                    item.setCabang(txtcabang.getText().toString());
 
-                    adapter.editItem(position, newitem);
+                    if (adapter == null) {
+                        items.add(item);
+                        adapter = new ListItemDistributor(EditdataPribadi.this, items);
+                        lvItem.setAdapter(adapter);
+                    } else {
+                        adapter.addItem(item);
+                    }
                     addNewItemDialog.dismiss();
                 }
             }
@@ -208,7 +238,26 @@ public class EditdataPribadi extends AppCompatActivity {
 
     private void submitForm() {
         // Submit your form here. your form is valid
-        Toast.makeText(EditdataPribadi.this, "registrasi berhasil", Toast.LENGTH_SHORT).show();
+        var_nama = txtnama.getText().toString();
+        var_email = txtemail.getText().toString();
+        var_alamat = txtalamat.getText().toString();
+        var_hp = txthp.getText().toString();
+        var_kodepos = txtkodepos.getText().toString();
+        var_wa = txtwa.getText().toString();
+
+        Intent parsing = null;
+        parsing = new Intent(EditdataPribadi.this, TampilanPribadi.class);
+        Bundle bb = new Bundle();
+        bb.putString("panggilnama", var_nama);
+        bb.putString("panggilemail", var_email);
+        bb.putString("panggilhp", var_hp);
+        bb.putString("panggilalamat", var_alamat);
+        bb.putString("panggilkodepos", var_kodepos);
+        bb.putString("panggilwhatsapp", var_wa);
+        bb.putString("panggil_pinbb", var_pinbb);
+        parsing.putExtras(bb);
+        startActivity(parsing);
+        Toast.makeText(EditdataPribadi.this, "Update Data Pribadi berhasil", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -223,9 +272,6 @@ public class EditdataPribadi extends AppCompatActivity {
     //    public boolean validasiCPass(String cpass) {
 //        return cpass.length() > 0;
 //    }
-    public boolean validateKode(String kode) {
-        return kode.length() > 0;
-    }
     public boolean validateNama(String nama) {
         return nama.length() > 0;
     }
@@ -238,6 +284,10 @@ public class EditdataPribadi extends AppCompatActivity {
     public boolean validateKodepos(String kodepos) {
         return kodepos.length() > 0;
     }
+    public boolean validateWhatApp(String WhasApp) {
+        return WhasApp.length() > 0;
+    }
+
 
     private boolean hasError(){
         boolean isError = false;
@@ -283,8 +333,6 @@ public class EditdataPribadi extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_pros) {
 
             String email = txtemail.getText().toString();
@@ -292,7 +340,7 @@ public class EditdataPribadi extends AppCompatActivity {
             String hp = txthp.getText().toString();
             String alamat = txtalamat.getText().toString();
             String kodepos = txtkodepos.getText().toString();
-
+            String editwa = txtwa.getText().toString();
 
             if (!validateNama(nama)) {
                 txtnama.setError("silahkan masukan nama anda");
@@ -318,6 +366,11 @@ public class EditdataPribadi extends AppCompatActivity {
                 txtkodepos.setError("silahkan masukan kode pos");
                 {
                     Toast.makeText(EditdataPribadi.this, "Kesalahan dalam pengisian kode pos", Toast.LENGTH_SHORT).show();
+                }
+            } else if (!validateWhatApp(editwa)) {
+                txtwa.setError("silahkan masukan No Whatsapp");
+                {
+                    Toast.makeText(EditdataPribadi.this, "Kesalahan dalam pengisian No Whatsapp", Toast.LENGTH_SHORT).show();
                 }
 
             } else submitForm();

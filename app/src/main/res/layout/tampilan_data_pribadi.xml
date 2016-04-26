@@ -354,6 +354,12 @@
             android:layout_height="wrap_content"
             android:text="Edit Data Pribadi"
             android:layout_marginRight="20dp"/>
+
+        <Button style="@style/RedButton"
+            android:text="Kembali"
+            android:id="@+id/kemba"
+            android:onClick="btn_kmbali"/>
+
         <requestFocus/>
     </LinearLayout>
 </LinearLayout>

@@ -79,7 +79,11 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 					//OFF
 					Toast.makeText(context, "Tidak Ada", Toast.LENGTH_LONG).show();
 				}
+
+
 			}
+
+
 		});//--
 
 		return convertView;
