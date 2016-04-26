@@ -2,6 +2,7 @@ package pusat.android.makananbekuenak.com.aplikasi_distributor;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -9,13 +10,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
 
-public class UpdateStokmagesActivity extends Activity {
+public class UpdateStokmagesActivity extends AppCompatActivity{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.updatestokmain);
-
 
         ArrayList<UpdateStokItemDetails> image_details = GetSearchResults();
 
@@ -37,17 +37,31 @@ public class UpdateStokmagesActivity extends Activity {
 
     	UpdateStokItemDetails item_details = new UpdateStokItemDetails();
     	item_details.setName("001");
-    	item_details.setItemDescription("Karapau Durian");
+    	item_details.setItemDescription("KARAPAO 4A");
     	item_details.setPrice("Rp 310.00");
-    	item_details.setImageNumber(1);
+    	item_details.setImageNumber(4);
     	results.add(item_details);
     	
     	item_details = new UpdateStokItemDetails();
     	item_details.setName("002");
-    	item_details.setItemDescription("Karapau Linux");
+    	item_details.setItemDescription("KARAPAO 4B");
     	item_details.setPrice("Rp 350.00");
     	item_details.setImageNumber(2);
     	results.add(item_details);
+
+		item_details = new UpdateStokItemDetails();
+		item_details.setName("003");
+		item_details.setItemDescription("KARAPAO 6A");
+		item_details.setPrice("Rp 350.00");
+		item_details.setImageNumber(3);
+		results.add(item_details);
+
+		item_details = new UpdateStokItemDetails();
+		item_details.setName("004");
+		item_details.setItemDescription("KARAPAO 6B");
+		item_details.setPrice("Rp 350.00");
+		item_details.setImageNumber(1);
+		results.add(item_details);
 
     	return results;
     }
