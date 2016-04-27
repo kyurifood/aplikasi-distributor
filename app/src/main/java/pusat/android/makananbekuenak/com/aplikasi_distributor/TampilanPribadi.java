@@ -26,7 +26,7 @@ public class TampilanPribadi extends AppCompatActivity {
         txtalamat = (EditText) findViewById(R.id.alamat);
         txtkodepos = (EditText) findViewById(R.id.kodepos);
         txtwa = (EditText) findViewById(R.id.whatsapp);
-        txtpinbb = (EditText) findViewById(R.id.pinbb);
+        txtpinbb = (EditText) findViewById(R.id.pinbbm);
 
         Bundle bb = getIntent().getExtras();
 
@@ -44,9 +44,10 @@ public class TampilanPribadi extends AppCompatActivity {
                 get_kodepos = bb.getString("panggilkodepos");
             if (bb.containsKey("panggilwhatsapp"))
                 get_wa = bb.getString("panggilwhatsapp");
-            if (bb.containsKey("panggpinbb"))
-                get_pinbb = bb.getString("panggpinbb");
+            if (bb.containsKey("panggilpinbb"))
+                get_pinbb = bb.getString("panggilpinbb");
         }
+        txtnama.setText("" + get_nama);
         txthp.setText("" + get_hp);
         txtemail.setText("" + get_email);
         txtalamat.setText("" + get_alamat);
@@ -76,7 +77,7 @@ public class TampilanPribadi extends AppCompatActivity {
                 b.putString("panggil_alamat", var_alamat);
                 b.putString("panggil_kodepos", var_kodepos);
                 b.putString("panggilwhatsapp", var_wa);
-                b.putString("panggpinbb", var_pinbb);
+                b.putString("panggilpinbb", var_pinbb);
                 i.putExtras(b);
                 startActivity(i);
             }

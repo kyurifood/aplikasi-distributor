@@ -66,6 +66,7 @@ public class EditdataPribadi extends AppCompatActivity {
         txtkodepos = (EditText) findViewById(R.id.editkodepos);
         txtwa = (EditText) findViewById(R.id.editwa);
         txtpinbb = (EditText) findViewById(R.id.editbb);
+
         Spinner mSpinner= (Spinner)findViewById(R.id.spinregional);
         Spinner pSpinner= (Spinner)findViewById(R.id.spinprov);
         Spinner kSpinner= (Spinner)findViewById(R.id.spinkec);
@@ -244,6 +245,7 @@ public class EditdataPribadi extends AppCompatActivity {
         var_hp = txthp.getText().toString();
         var_kodepos = txtkodepos.getText().toString();
         var_wa = txtwa.getText().toString();
+        var_pinbb = txtpinbb.getText().toString();
 
         Intent parsing = null;
         parsing = new Intent(EditdataPribadi.this, TampilanPribadi.class);
@@ -254,7 +256,7 @@ public class EditdataPribadi extends AppCompatActivity {
         bb.putString("panggilalamat", var_alamat);
         bb.putString("panggilkodepos", var_kodepos);
         bb.putString("panggilwhatsapp", var_wa);
-        bb.putString("panggil_pinbb", var_pinbb);
+        bb.putString("panggilpinbb", var_pinbb);
         parsing.putExtras(bb);
         startActivity(parsing);
         Toast.makeText(EditdataPribadi.this, "Update Data Pribadi berhasil", Toast.LENGTH_SHORT).show();
