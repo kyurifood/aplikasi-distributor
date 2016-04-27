@@ -6,7 +6,7 @@
     <item
         android:id="@+id/action_proses"
         android:title="Registrasi"
-        android:icon="@drawable/ic_av_my_library_add"
+        android:icon="@drawable/t"
         android:orderInCategory="100"
         app:showAsAction="always"/>
 
