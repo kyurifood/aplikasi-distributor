@@ -21,7 +21,9 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:prompt="@string/p1"
-        android:entries="@array/pList">
+        android:entries="@array/pList"
+        android:spinnerMode="dialog"
+        android:gravity="center">
     </Spinner>
     <View style="@style/HorizontalDivider"
         android:layout_marginLeft="15dp"

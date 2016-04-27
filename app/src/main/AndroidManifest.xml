@@ -15,15 +15,15 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
 
         <activity android:name=".RegistrasiDistributor"/>
+        <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.LoginActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity" android:theme="@style/AppTheme.Dark" />
 
         <activity
             android:name=".UpdateStokmagesActivity"
-            android:label="update stok">
+            android:label=" update stok">
         </activity>
 
         <activity

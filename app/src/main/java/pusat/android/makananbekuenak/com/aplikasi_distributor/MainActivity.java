@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ActionMode;
@@ -13,16 +12,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -36,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     int mYear,mMonth, mDay;
     static final int DATE_DIALOG_ID = 1;
-    private String[] arrMonth = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+    private String[] arrMonth = {"Januari","Februari","Maret","April","Mei","Juni","Juli","Augustus","September","Oktober","November","Desember"};
     public ProgressDialog pDialog;
     DatePickerDialog datePicker;
     ListView lvItem;
@@ -97,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onCreateActionMode(ActionMode mode, Menu menu) {
                 MenuInflater inflater = getMenuInflater();
-                inflater.inflate(R.menu.menu_list_item, menu);
+                inflater.inflate(R.menu.menu_main, menu);
                 mode.setTitle("Select Items");
                 return true;
             }
@@ -110,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.action_submit:
+                    case R.id.action_settings:
                         StringBuilder sb = new StringBuilder();
                         for(int i = 0; i < lvItem.getAdapter().getCount(); i++){
                             Item_Pesanan x = (Item_Pesanan) lvItem.getAdapter().getItem(i);
@@ -142,15 +139,30 @@ public class MainActivity extends AppCompatActivity {
     public void NotifikasiResi(final Item_Pesanan item) {
         //---
         final Dialog dialog = new Dialog(MainActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_LEFT_ICON);
         dialog.setContentView(R.layout.kirim_order_noresi);
         dialog.setCancelable(true);
         dialog.setTitle("Kirim Order");
+        dialog.setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.ic_mode_edit_black_24dp);
 
         modeKirim = (Spinner) dialog.findViewById(R.id.l_pengiriman);
         nomoResi = (EditText)dialog.findViewById(R.id.nmrResi);
         btnPrs = (Button)dialog.findViewById(R.id.btn_Proses);
         btnCancel = (Button)dialog.findViewById(R.id.btnKembali);
         dialog.show();
+
+        modeKirim.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(MainActivity.this, "Pilihan Pegiriman : " + modeKirim.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         btnPrs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,13 +176,13 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Kesalahan Pengisian Nomor Resi", Toast.LENGTH_SHORT).show();
                     }
 
-                }else cekResi();
+                } else cekResi();
             }
 
             private void cekResi() {
                 adapter.kirimOrder();
                 Toast.makeText(
-                        MainActivity.this, "Berhasil : No.Resi " + nomoResi.getText() + " Pengiriman : " + String.valueOf(modeKirim.getSelectedItem()) , Toast.LENGTH_LONG).show();
+                        MainActivity.this, "Berhasil : No.Resi " + nomoResi.getText() + " Pengiriman : " + String.valueOf(modeKirim.getSelectedItem()), Toast.LENGTH_LONG).show();
                 dialog.cancel();
             }
         });
@@ -180,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Tombol Batal
                 Toast.makeText(MainActivity.this, "Anda Gagal Memasukan Nomor Resi", Toast.LENGTH_LONG).show();
-                dialog.cancel();
+                dialog.dismiss();
             }
         });
     }
@@ -189,9 +201,11 @@ public class MainActivity extends AppCompatActivity {
 
         //---
         final Dialog tampil = new Dialog(MainActivity.this);
+        tampil.requestWindowFeature(Window.FEATURE_LEFT_ICON);
         tampil.setContentView(R.layout.update_status_penerimaan);
         tampil.setCancelable(true);
         tampil.setTitle("Update Status Penerimaan");
+        tampil.setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.ic_border_color_black_18dp);
 
         penerima = (EditText) tampil.findViewById(R.id.nmPenerima);
         tgl_penerima = (EditText) tampil.findViewById(R.id.tgl_penerimaan);
@@ -274,6 +288,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean validasiTgl(String tgl) {
         return tgl.length() > 0;
     }
+
+
 
 
     @Override

@@ -55,7 +55,7 @@ public class HomeScreen extends AppCompatActivity{
             public void onClick(View arg0) {
 
                 Intent myIntent = new Intent(HomeScreen.this,
-                        Kosong.class);
+                        UpdateStokmagesActivity.class);
                 startActivity(myIntent);
             }
         });
@@ -69,8 +69,11 @@ public class HomeScreen extends AppCompatActivity{
                 startActivity(myIntent);
             }
         });
-       // Intent intent = new Intent(this, LoginActivity.class);
-       // startActivity(intent);
+
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+
     }
 
     @Override

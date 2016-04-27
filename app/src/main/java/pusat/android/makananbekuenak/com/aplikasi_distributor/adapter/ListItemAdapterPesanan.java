@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,9 +60,7 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         TextView bank = (TextView) convertView.findViewById(R.id.bank);
         TextView nominal = (TextView) convertView.findViewById(R.id.nominal);
 
-        Button btnAction1 = (Button) convertView.findViewById(R.id.btn_action_1);
-        final Button btnAction2 = (Button) convertView.findViewById(R.id.btn_action_2);
-        final Button pop = (Button) convertView.findViewById(R.id.btn_pop);
+        final ImageButton pop = (ImageButton) convertView.findViewById(R.id.btn_pop);
         final CheckBox lunas = (CheckBox) convertView.findViewById(R.id.cb_lunas);
         final CheckBox diterima = (CheckBox) convertView.findViewById(R.id.cb_diterima);
         diterima.setChecked(item.isDiterima());
@@ -74,18 +73,18 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         bank.setText(item.getBank());
         nominal.setText(item.getNominal());
 
-        btnAction1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                lunas.setChecked(true);
-                if (lunas.isChecked()){
-                    pop.setEnabled(true);
-                    Toast.makeText(context, item.getNo_order() + ", Lunas",  Toast.LENGTH_SHORT).show();
-                }else {
-                    pop.setEnabled(false);
-                }
-            }
-        });
+//        btnAction1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                lunas.setChecked(true);
+//                if (lunas.isChecked()){
+//                    pop.setEnabled(true);
+//                    Toast.makeText(context, item.getNo_order() + ", Lunas",  Toast.LENGTH_SHORT).show();
+//                }else {
+//                    pop.setEnabled(false);
+//                }
+//            }
+//        });
 
         //opsi menu
         pop.setOnClickListener(new View.OnClickListener() {

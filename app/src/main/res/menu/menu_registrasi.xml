@@ -3,10 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/action_proses"
+    <item
+        android:id="@+id/action_proses"
         android:title="Registrasi"
-        android:icon="@drawable/t"
+        android:icon="@drawable/ic_av_my_library_add"
         android:orderInCategory="100"
-        app:showAsAction="always" />
+        app:showAsAction="always"/>
 
 </menu>
