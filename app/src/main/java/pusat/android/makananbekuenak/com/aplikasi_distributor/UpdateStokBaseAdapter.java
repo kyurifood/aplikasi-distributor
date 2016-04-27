@@ -74,10 +74,10 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 
 				if (isChecked) {
 					//ON
-					Toast.makeText(context, updateStokItemDetailsrrayList.get(position).getName() + ", " + updateStokItemDetailsrrayList.get(position).getItemDescription() + ", Ada", Toast.LENGTH_LONG).show();
+					Toast.makeText(context, updateStokItemDetailsrrayList.get(position).getName() + ", " + updateStokItemDetailsrrayList.get(position).getItemDescription() + ", Tersedia", Toast.LENGTH_LONG).show();
 				} else {
 					//OFF
-					Toast.makeText(context, updateStokItemDetailsrrayList.get(position).getName() + ", " + updateStokItemDetailsrrayList.get(position).getItemDescription() + ", Tidak Ada", Toast.LENGTH_LONG).show();
+					Toast.makeText(context, updateStokItemDetailsrrayList.get(position).getName() + ", " + updateStokItemDetailsrrayList.get(position).getItemDescription() + ", Tidak Tersedia", Toast.LENGTH_LONG).show();
 				}
 
 

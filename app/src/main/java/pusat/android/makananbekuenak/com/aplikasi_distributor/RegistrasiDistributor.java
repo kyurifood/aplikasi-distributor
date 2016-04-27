@@ -53,6 +53,8 @@ public class RegistrasiDistributor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registrasi_distributor);
 
+        getSupportActionBar().setTitle("Registrasi Distributor");
+
 
         txtpas = (EditText)findViewById(R.id.pasword);
         //txtcpas = (EditText)findViewById(R.id.cpasword);

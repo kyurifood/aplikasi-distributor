@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class TampilanPribadi extends AppCompatActivity {
 
-    Button edit;
+    Button edit, back;
 
     EditText txtnama, txthp, txtalamat, txtkodepos, txtemail, txtwa, txtpinbb;
     String var_nama, var_hp, var_alamat, var_kodepos, var_email, var_wa,var_pinbb = "";
@@ -26,7 +26,17 @@ public class TampilanPribadi extends AppCompatActivity {
         txtalamat = (EditText) findViewById(R.id.alamat);
         txtkodepos = (EditText) findViewById(R.id.kodepos);
         txtwa = (EditText) findViewById(R.id.whatsapp);
+
         txtpinbb = (EditText) findViewById(R.id.pinbbm);
+        back = (Button) findViewById(R.id.kembali);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent panggil = new Intent(getApplicationContext(), Pengaturan.class);
+                startActivity(panggil);
+            }
+        });
+
 
         Bundle bb = getIntent().getExtras();
 

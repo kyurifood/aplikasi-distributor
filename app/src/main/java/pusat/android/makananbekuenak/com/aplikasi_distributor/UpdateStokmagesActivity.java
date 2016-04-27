@@ -17,6 +17,11 @@ public class UpdateStokmagesActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.updatestokmain);
 
+		getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+		getSupportActionBar().setLogo(R.drawable.black_ic_shopping_bag);
+		getSupportActionBar().setDisplayUseLogoEnabled(true);
+
         ArrayList<UpdateStokItemDetails> image_details = GetSearchResults();
 
         final ListView lv1 = (ListView) findViewById(R.id.listV_main);
