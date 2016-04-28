@@ -71,11 +71,13 @@ public class EditdataPribadi extends AppCompatActivity {
         Spinner pSpinner= (Spinner)findViewById(R.id.spinprov);
         Spinner kSpinner= (Spinner)findViewById(R.id.spinkec);
         Spinner lSpinner= (Spinner)findViewById(R.id.spinkel);
+        Spinner nSpinner= (Spinner)findViewById(R.id.spinkota);
 
         mSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
         pSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
         kSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
         lSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
+        nSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
 
         lvItem = (ListView) findViewById(R.id.lv_item);
 //        ViewGroup.LayoutParams listViewParams = (ViewGroup.LayoutParams) lvItem.getLayoutParams();

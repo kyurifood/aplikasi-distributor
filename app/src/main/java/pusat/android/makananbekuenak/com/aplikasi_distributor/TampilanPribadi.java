@@ -26,7 +26,6 @@ public class TampilanPribadi extends AppCompatActivity {
         txtalamat = (EditText) findViewById(R.id.alamat);
         txtkodepos = (EditText) findViewById(R.id.kodepos);
         txtwa = (EditText) findViewById(R.id.whatsapp);
-
         txtpinbb = (EditText) findViewById(R.id.pinbbm);
         back = (Button) findViewById(R.id.kembali);
         back.setOnClickListener(new View.OnClickListener() {

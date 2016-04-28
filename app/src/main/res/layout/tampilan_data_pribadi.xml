@@ -63,7 +63,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="No Hp"
+            android:text="No Handphone "
             android:textSize="7pt"
             android:textStyle="bold"
             android:layout_weight="1"/>
@@ -86,7 +86,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="WhatsAPP"
+            android:text="WhatsApp"
             android:textSize="7pt"
             android:textStyle="bold"
             android:layout_weight="1"/>
@@ -109,7 +109,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pin BB"
+            android:text="Pin BBM"
             android:textSize="7pt"
             android:textStyle="bold"
             android:layout_weight="1"/>
@@ -133,7 +133,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Regional"
+            android:text="REGIONAL"
             android:textSize="7pt"
             android:textStyle="bold"
             android:layout_weight="1"/>
@@ -181,7 +181,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Provinsi/Kabupaten"
+            android:text="PROVINSI"
             android:textSize="7pt"
             android:textStyle="bold"
             android:layout_weight="1"/>
@@ -191,7 +191,32 @@
             android:layout_weight="0.7"
             android:enabled="false"
             android:textColor="@color/black"
-            android:id="@+id/provinsikabupaten"/>
+            android:id="@+id/provinsi"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="KOTA"
+            android:textSize="7pt"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:enabled="false"
+            android:textColor="@color/black"
+            android:id="@+id/KOTA"/>
     </LinearLayout>
 
     <LinearLayout
@@ -205,7 +230,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kecamatan"
+            android:text="KECAMATAN"
             android:textSize="7pt"
             android:textStyle="bold"
             android:layout_weight="1"/>
@@ -229,7 +254,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kelurahan"
+            android:text="KELURAHAN"
             android:textSize="7pt"
             android:textStyle="bold"
             android:layout_weight="1"/>
