@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ListItemAdapterPesanan(MainActivity.this, items);
 
         lvItem.setAdapter(adapter);
+
 //        lvItem.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
 //            @Override
 //            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 //            @Override
 //            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
 //                MenuInflater inflater = getMenuInflater();
-//                inflater.inflate(R.menu.menu_main, menu);
+//                inflater.inflate(R.menu.menu_list_item, menu);
 //                mode.setTitle("Select Items");
 //                return true;
 //            }
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 //            @Override
 //            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
 //                switch (item.getItemId()) {
-//                    case R.id.action_settings:
+//                    case R.id.action_submit:
 //                        StringBuilder sb = new StringBuilder();
 //                        for(int i = 0; i < lvItem.getAdapter().getCount(); i++){
 //                            Item_Pesanan x = (Item_Pesanan) lvItem.getAdapter().getItem(i);
@@ -129,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 //                return true;
 //            }
 //
-//            @Override`
+//            @Override
 //            public void onDestroyActionMode(ActionMode mode) {
 //                adapter.unselectAllItems();
 //            }

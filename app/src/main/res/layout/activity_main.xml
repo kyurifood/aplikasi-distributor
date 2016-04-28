@@ -8,7 +8,8 @@
         android:divider="@android:color/transparent"
         android:id="@+id/lv_item"/>
         <!--android:drawSelectorOnTop="true"-->
-        <!--/android:focusable="true"-->
+        <!--android:focusable="true"-->
+        <!--android:longClickable="true"-->
         <!--android:choiceMode="multipleChoiceModal"-->
 
 </LinearLayout>

@@ -1,9 +1,7 @@
 package pusat.android.makananbekuenak.com.aplikasi_distributor;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -12,8 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -33,13 +31,18 @@ import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ItemDistrib
  */
 public class EditdataPribadi extends AppCompatActivity {
 
+    private String[] Regional_List = { "sulawesi", "Bogor", "Bekasi"};
+    private String[] Provinsi_List = {};
+    private String[] Kecamatan_List = {};
+    private String[] Kelurahan_List = {};
+
     ListView lvItem;
     ListItemDistributor adapter;
-
+    Spinner L_Regional, L_Propinsi, L_Kecamatan, L_Kelurahan;
+    ArrayAdapter<String> adapter_propinsi, adapter_kecamatan, adapter_kelurahan;
     AlertDialog.Builder addNewItemDialogBuilder = null;
     AlertDialog addNewItemDialog = null;
     View promptsView;
-    TextInputLayout lbrek;
 
     private Spinner spinnerbank;
 
@@ -58,6 +61,10 @@ public class EditdataPribadi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.editdatapribadi);
 
+        System.out.println(Provinsi_List);
+        System.out.println(Kecamatan_List);
+        System.out.println(Kelurahan_List);
+
 
         txtemail = (EditText) findViewById(R.id.editemail);
         txtnama = (EditText) findViewById(R.id.editnama);
@@ -67,20 +74,96 @@ public class EditdataPribadi extends AppCompatActivity {
         txtwa = (EditText) findViewById(R.id.editwa);
         txtpinbb = (EditText) findViewById(R.id.editbb);
 
-        Spinner mSpinner= (Spinner)findViewById(R.id.spinregional);
-        Spinner pSpinner= (Spinner)findViewById(R.id.spinprov);
-        Spinner kSpinner= (Spinner)findViewById(R.id.spinkec);
-        Spinner lSpinner= (Spinner)findViewById(R.id.spinkel);
 
-        mSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
-        pSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
-        kSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
-        lSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
+        L_Kecamatan = (Spinner)findViewById(R.id.spinkec);
+        L_Kelurahan = (Spinner)findViewById(R.id.spinkel);
+        L_Regional = (Spinner)findViewById(R.id.spinregional);
+        L_Propinsi =(Spinner)findViewById(R.id.spinprov);
+
+        ArrayAdapter<String> adapter_regional = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_dropdown_item, Regional_List);
+        adapter_regional.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        L_Regional.setAdapter(adapter_regional);
+        L_Regional.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    (Provinsi_List) = new String[]{"-", "Gorontalo", "Makassar", "Kendari"};
+
+                } else if (position == 1) {
+                    Provinsi_List = new String[]{"-", "4", "5", "6"};
+
+                } else if (position == 2) {
+                    Provinsi_List = new String[]{"-", "7", "8", "9"};
+
+                }
+                adapter_propinsi = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_list_layout, Provinsi_List);
+                L_Propinsi.setAdapter(adapter_propinsi);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        adapter_propinsi = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_list_layout, Provinsi_List);
+        L_Propinsi.setAdapter(adapter_propinsi);
+        L_Propinsi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 1) {
+                    Kecamatan_List = new String[]{"-", "Tibawa", "Paguyama", "Tolinggula"};
+
+                }else if (position == 2){
+                    Kecamatan_List = new String[]{"-", "makassar1", "makassar2", "Makassar3"};
+
+                }else if (position  == 3){
+                    Kecamatan_List = new String[]{"-", "Kendari1", "kendari2", "Kendari3"};
+
+                }else if (position == 0){
+                    Kecamatan_List = new String[]{};
+                }
+                adapter_kecamatan = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_list_layout, Kecamatan_List);
+                L_Kecamatan.setAdapter(adapter_kecamatan);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        adapter_kecamatan = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_list_layout, Kecamatan_List);
+        L_Kecamatan.setAdapter(adapter_kecamatan);
+        L_Kecamatan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 1) {
+                    Kelurahan_List = new String[]{"-", "Tibawa kel", "Tibawa kel2", "Tibawa  kel3"};
+
+                }else if (position == 2){
+                    Kelurahan_List = new String[]{"-", "paguyaman kel", "paguyaman kel2", "paguyaman kel3"};
+
+                }else if (position  == 3){
+                    Kelurahan_List = new String[]{"-", "Tolinggula Kel", "Tolinggula Kel2", "Tolinggula Kel3"};
+
+                }else if (position == 0){
+                    Kelurahan_List = new String[]{};
+                }
+                adapter_kelurahan = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_list_layout, Kelurahan_List);
+                L_Kelurahan.setAdapter(adapter_kelurahan);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
 
         lvItem = (ListView) findViewById(R.id.lv_item);
-//        ViewGroup.LayoutParams listViewParams = (ViewGroup.LayoutParams) lvItem.getLayoutParams();
-//        listViewParams.height = 360;
-//        lvItem.requestLayout();
 
         lvItem.setOnTouchListener(new View.OnTouchListener() {
             @Override
