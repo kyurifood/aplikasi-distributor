@@ -8,12 +8,8 @@
         android:supportsRtl="true"
 
         android:theme="@style/AppTheme" >
-        <activity android:name=".EditdataPribadi" />
 
-        <activity android:name=".HomeScreen" />
 
-        android:label="Distributor"
-        android:theme="@style/CustomActionBarTheme">
         <activity
             android:name=".HomeScreen"
             android:label="Homescren">
@@ -25,8 +21,6 @@
         </activity>
 
 
-        <activity android:name=".KirimOrder" />
-        <activity android:name=".Pengaturan"/>
 
 
         <activity
