@@ -8,6 +8,15 @@ public class ItemDistributor {
     private String rekening;
     private String pemilik;
     private String cabang;
+    private boolean cek;
+
+    public boolean isCek() {
+        return cek;
+    }
+
+    public void setCek(boolean cek) {
+        this.cek = cek;
+    }
 
     public String getBank() {
         return bank;

@@ -69,7 +69,6 @@
         </activity>
         <activity android:name=".Kosong"/>
 
-
         <activity android:name=".Lihatdetail"
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="adjustPan|adjustResize" >
@@ -79,11 +78,9 @@
                 android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.MainActivity" />
             <!-- END Coding Kembali Ke Menu Utama-->
         </activity>
-
-
-
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
-
+        <activity
+            android:name=".UpdateStokmagesActivity"
+            android:label=" Update Stok">
+        </activity>/
     </application>
 </manifest>

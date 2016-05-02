@@ -175,14 +175,6 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         return convertView;
     }
 
-
-    public void unselectAllItems(){
-        for (int i = 0; i < items.size(); i++){
-            Item_Pesanan item = items.get(i);
-            item.setSelected(false);
-        }
-    }
-
     public void updateItem(Item_Pesanan item_pesanan){
         items.set(updatePos, item_pesanan);
         notifyDataSetChanged();
