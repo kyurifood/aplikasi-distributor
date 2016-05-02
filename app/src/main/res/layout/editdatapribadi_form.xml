@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
-            android:hint="No-HP"
+            android:hint="No Handphone"
             android:ems="10"
             android:id="@+id/edithp" />
     </android.support.design.widget.TextInputLayout>
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
-            android:hint="WhatApp"
+            android:hint="WhatsApp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
@@ -60,7 +60,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Pin BB"
+            android:hint="Pin BBM"
             android:inputType="text"
             android:id="@+id/editbb" />
     </android.support.design.widget.TextInputLayout>
@@ -95,13 +95,15 @@
         android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PROVINSI / KABUPATEN"
+        android:text="PROVINSI"
         android:id="@+id/textView10" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:entries="@array/proklist"
         android:id="@+id/spinprov" />
+
 
     <TextView
         android:padding="5dp"

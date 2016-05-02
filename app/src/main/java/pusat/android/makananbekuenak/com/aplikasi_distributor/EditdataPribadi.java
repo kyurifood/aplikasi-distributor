@@ -1,6 +1,7 @@
 package pusat.android.makananbekuenak.com.aplikasi_distributor;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +17,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +32,10 @@ import java.util.regex.Pattern;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.adapter.ListItemDistributor;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ItemDistributor;
 
-/**
- * Created by rinaldy on 07/04/16.
- */
+
 public class EditdataPribadi extends AppCompatActivity {
 
-    private String[] Regional_List = { "sulawesi", "Bogor", "Bekasi"};
+    private String[] Regional_List = {"sulawesi"};
     private String[] Provinsi_List = {};
     private String[] Kecamatan_List = {};
     private String[] Kelurahan_List = {};
@@ -47,8 +51,9 @@ public class EditdataPribadi extends AppCompatActivity {
     private Spinner spinnerbank;
 
     EditText txtnama, txthp, txtalamat, txtkodepos, txtemail, txtrek, txtpemilik, txtcabang, txtwa, txtpinbb;
-    String get_nama, get_hp, get_alamat, get_kodepos, get_email, get_rek, get_pemilik, get_cabang, get_wa, get_pinbb, get_regional;
-    String var_nama, var_hp, var_alamat, var_kodepos, var_email, var_rek,var_pemilik, var_cabang, var_wa, var_pinbb, var_regional;
+
+    String get_nama, get_hp, get_alamat, get_kodepos, get_email, get_rek, get_pemilik, get_cabang, get_wa, get_pinbb, get_regional, get_provinsi, get_kecamatan, get_kelurahan;
+    String var_nama, var_hp, var_alamat, var_kodepos, var_email, var_rek, var_pemilik, var_cabang, var_wa, var_pinbb, var_regional, var_provinsi, var_kecamatan, var_kelurahan;
 
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
@@ -56,6 +61,7 @@ public class EditdataPribadi extends AppCompatActivity {
 
 
     List<ItemDistributor> items = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,19 +72,20 @@ public class EditdataPribadi extends AppCompatActivity {
         System.out.println(Kelurahan_List);
 
 
-        txtemail = (EditText) findViewById(R.id.editemail);
+
         txtnama = (EditText) findViewById(R.id.editnama);
         txthp = (EditText) findViewById(R.id.edithp);
         txtalamat = (EditText) findViewById(R.id.editalamat);
         txtkodepos = (EditText) findViewById(R.id.editkodepos);
+        txtemail = (EditText) findViewById(R.id.editemail);
         txtwa = (EditText) findViewById(R.id.editwa);
         txtpinbb = (EditText) findViewById(R.id.editbb);
 
 
-        L_Kecamatan = (Spinner)findViewById(R.id.spinkec);
-        L_Kelurahan = (Spinner)findViewById(R.id.spinkel);
-        L_Regional = (Spinner)findViewById(R.id.spinregional);
-        L_Propinsi =(Spinner)findViewById(R.id.spinprov);
+        L_Regional = (Spinner) findViewById(R.id.spinregional);
+        L_Kecamatan = (Spinner) findViewById(R.id.spinkec);
+        L_Kelurahan = (Spinner) findViewById(R.id.spinkel);
+        L_Propinsi = (Spinner) findViewById(R.id.spinprov);
 
         ArrayAdapter<String> adapter_regional = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, Regional_List);
@@ -88,13 +95,8 @@ public class EditdataPribadi extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    (Provinsi_List) = new String[]{"-", "Gorontalo", "Makassar", "Kendari"};
+                    (Provinsi_List) = new String[]{"-", "Gorontalo"};
 
-                } else if (position == 1) {
-                    Provinsi_List = new String[]{"-", "4", "5", "6"};
-
-                } else if (position == 2) {
-                    Provinsi_List = new String[]{"-", "7", "8", "9"};
 
                 }
                 adapter_propinsi = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_list_layout, Provinsi_List);
@@ -116,13 +118,7 @@ public class EditdataPribadi extends AppCompatActivity {
                 if (position == 1) {
                     Kecamatan_List = new String[]{"-", "Tibawa", "Paguyama", "Tolinggula"};
 
-                }else if (position == 2){
-                    Kecamatan_List = new String[]{"-", "makassar1", "makassar2", "Makassar3"};
-
-                }else if (position  == 3){
-                    Kecamatan_List = new String[]{"-", "Kendari1", "kendari2", "Kendari3"};
-
-                }else if (position == 0){
+                } else if (position == 0) {
                     Kecamatan_List = new String[]{};
                 }
                 adapter_kecamatan = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_list_layout, Kecamatan_List);
@@ -142,13 +138,13 @@ public class EditdataPribadi extends AppCompatActivity {
                 if (position == 1) {
                     Kelurahan_List = new String[]{"-", "Tibawa kel", "Tibawa kel2", "Tibawa  kel3"};
 
-                }else if (position == 2){
+                } else if (position == 2) {
                     Kelurahan_List = new String[]{"-", "paguyaman kel", "paguyaman kel2", "paguyaman kel3"};
 
-                }else if (position  == 3){
+                } else if (position == 3) {
                     Kelurahan_List = new String[]{"-", "Tolinggula Kel", "Tolinggula Kel2", "Tolinggula Kel3"};
 
-                }else if (position == 0){
+                } else if (position == 0) {
                     Kelurahan_List = new String[]{};
                 }
                 adapter_kelurahan = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_list_layout, Kelurahan_List);
@@ -160,7 +156,6 @@ public class EditdataPribadi extends AppCompatActivity {
 
             }
         });
-
 
 
         lvItem = (ListView) findViewById(R.id.lv_item);
@@ -186,13 +181,20 @@ public class EditdataPribadi extends AppCompatActivity {
         get_hp = b.getString("panggil_hp");
         get_alamat = b.getString("panggil_alamat");
         get_kodepos = b.getString("panggil_kodepos");
+        get_email = b.getString("panggil_email");
         get_wa = b.getString("panggil_wa");
         get_pinbb = b.getString("panggil_pinbb");
+        get_regional = b.getString("panggil_regional");
+        get_provinsi = b.getString("panggil_provinsi");
+        get_kecamatan =b.getString("panggil_kecamatan");
+        get_kelurahan =b.getString("panggil_kecamatan");
+
 
         txtnama.setText("" + get_nama);
         txtemail.setText("" + get_email);
-        txthp.setText(""+ get_hp);
-        txtkodepos.setText(""+ get_kodepos);
+        txthp.setText("" + get_hp);
+        txtkodepos.setText("" + get_kodepos);
+        txtemail.setText("" + get_email);
         txtalamat.setText("" + get_alamat);
         txtwa.setText("" + get_wa);
         txtpinbb.setText("" + get_pinbb);
@@ -206,7 +208,7 @@ public class EditdataPribadi extends AppCompatActivity {
         promptsView = LayoutInflater.from(EditdataPribadi.this).inflate(R.layout.bank_distributor, null);
 
 
-        final Spinner mSpinner= (Spinner) promptsView.findViewById(R.id.spinnerbank);
+        final Spinner mSpinner = (Spinner) promptsView.findViewById(R.id.spinnerbank);
         txtrek = (EditText) promptsView.findViewById(R.id.editText);
         txtpemilik = (EditText) promptsView.findViewById(R.id.editText2);
         txtcabang = (EditText) promptsView.findViewById(R.id.editText3);
@@ -262,7 +264,7 @@ public class EditdataPribadi extends AppCompatActivity {
 
         promptsView = LayoutInflater.from(EditdataPribadi.this).inflate(R.layout.bank_distributor, null);
 
-        Spinner mSpinner= (Spinner) promptsView.findViewById(R.id.spinnerbank);
+        Spinner mSpinner = (Spinner) promptsView.findViewById(R.id.spinnerbank);
         txtrek = (EditText) promptsView.findViewById(R.id.editText);
         txtrek.setText(item.getRekening());
         txtpemilik = (EditText) promptsView.findViewById(R.id.editText2);
@@ -270,7 +272,7 @@ public class EditdataPribadi extends AppCompatActivity {
         txtcabang = (EditText) promptsView.findViewById(R.id.editText3);
         txtcabang.setText(item.getCabang());
         spinnerbank = (Spinner) promptsView.findViewById(R.id.spinnerbank);
-        String s = (String)(spinnerbank.getSelectedItem());
+        String s = (String) (spinnerbank.getSelectedItem());
         item.setBank(s);
 
         mSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
@@ -317,8 +319,6 @@ public class EditdataPribadi extends AppCompatActivity {
     }
 
 
-
-
     private void submitForm() {
         // Submit your form here. your form is valid
         var_nama = txtnama.getText().toString();
@@ -330,6 +330,12 @@ public class EditdataPribadi extends AppCompatActivity {
         var_pinbb = txtpinbb.getText().toString();
         var_regional = L_Regional.getSelectedItem().toString();
         var_rek = txtrek.getText().toString();
+        var_provinsi = L_Propinsi.getSelectedItem().toString();
+        var_kecamatan = L_Kecamatan.getSelectedItem().toString();
+        var_kelurahan = L_Kelurahan.getSelectedItem().toString();
+        var_rek = txtrek.getText().toString();
+        var_pemilik = txtpemilik.getText().toString();
+        var_cabang = txtcabang.getText().toString();
 
         Intent parsing = null;
         parsing = new Intent(EditdataPribadi.this, TampilanPribadi.class);
@@ -343,6 +349,12 @@ public class EditdataPribadi extends AppCompatActivity {
         bb.putString("panggilpinbb", var_pinbb);
         bb.putString("panggilregional", var_regional);
         bb.putString("panggilrekening", var_rek);
+        bb.putString("panggilprovinsi", var_provinsi);
+        bb.putString("panggilkecamatan", var_kecamatan);
+        bb.putString("panggilkelurahan", var_kelurahan);
+        bb.putString("panggilrek", var_rek);
+        bb.putString("panggilpemilik", var_pemilik);
+        bb.putString("panggilcabang", var_cabang);
         parsing.putExtras(bb);
         startActivity(parsing);
         Toast.makeText(EditdataPribadi.this, "Update Data Pribadi berhasil", Toast.LENGTH_SHORT).show();
@@ -354,45 +366,45 @@ public class EditdataPribadi extends AppCompatActivity {
         return matcher.matches();
     }
 
-    public boolean validasiPass(String pass) {
-        return pass.length() > 4;
-    }
-    //    public boolean validasiCPass(String cpass) {
-//        return cpass.length() > 0;
-//    }
     public boolean validateNama(String nama) {
         return nama.length() > 0;
     }
+
     public boolean validateHp(String hp) {
         return hp.length() > 0;
     }
+
     public boolean validateAlamat(String alamat) {
         return alamat.length() > 0;
     }
+
     public boolean validateKodepos(String kodepos) {
         return kodepos.length() > 0;
     }
+
     public boolean validateWhatApp(String WhasApp) {
         return WhasApp.length() > 0;
     }
 
 
-    private boolean hasError(){
+    private boolean hasError() {
         boolean isError = false;
-        if(TextUtils.isEmpty(txtrek.getText().toString())){
+        if (TextUtils.isEmpty(txtrek.getText().toString())) {
             isError = true;
             txtrek.setError("This field is required");
         }
-        if(TextUtils.isEmpty(txtpemilik.getText().toString())){
+        if (TextUtils.isEmpty(txtpemilik.getText().toString())) {
             isError = true;
             txtpemilik.setError("This field is required");
         }
-        if(TextUtils.isEmpty(txtcabang.getText().toString())){
+        if (TextUtils.isEmpty(txtcabang.getText().toString())) {
             isError = true;
             txtcabang.setError("This field is required");
         }
         return isError;
     }
+
+
 
     public class OnSpinnerItemClicked implements AdapterView.OnItemSelectedListener {
 
@@ -440,7 +452,7 @@ public class EditdataPribadi extends AppCompatActivity {
                 {
                     Toast.makeText(EditdataPribadi.this, "Kesalahan dalam pengisian email", Toast.LENGTH_SHORT).show();
                 }
-            }else if (!validateHp(hp)) {
+            } else if (!validateHp(hp)) {
                 txthp.setError("silahkan masukan nomor hand phone");
                 {
                     Toast.makeText(EditdataPribadi.this, "Kesalahan dalam pengisian phone", Toast.LENGTH_SHORT).show();
@@ -465,7 +477,7 @@ public class EditdataPribadi extends AppCompatActivity {
             return true;
         }
 
-        if (id == R.id.reset){
+        if (id == R.id.reset) {
 
         }
 

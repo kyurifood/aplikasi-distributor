@@ -18,7 +18,10 @@ public class HomeScreen extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.home_screen);
+
+        getSupportActionBar().setTitle("Distributor");
 
         btn_pesanan = (Button) findViewById(R.id.pesanana);
         btn_pesanan.setOnClickListener(new View.OnClickListener() {
