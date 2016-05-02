@@ -22,6 +22,7 @@ import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.Item_Pesana
 /**
  * Created by opaw on 3/30/16.
  */
+
 public class ListItemAdapterPesanan extends BaseAdapter {
     public Context context;
     private List<Item_Pesanan> items;
@@ -72,19 +73,6 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         nama.setText(item.getNama());
         bank.setText(item.getBank());
         nominal.setText(item.getNominal());
-
-//        btnAction1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                lunas.setChecked(true);
-//                if (lunas.isChecked()){
-//                    pop.setEnabled(true);
-//                    Toast.makeText(context, item.getNo_order() + ", Lunas",  Toast.LENGTH_SHORT).show();
-//                }else {
-//                    pop.setEnabled(false);
-//                }
-//            }
-//        });
 
         //opsi menu
         pop.setOnClickListener(new View.OnClickListener() {

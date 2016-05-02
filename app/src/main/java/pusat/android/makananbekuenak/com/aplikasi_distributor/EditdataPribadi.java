@@ -47,8 +47,8 @@ public class EditdataPribadi extends AppCompatActivity {
     private Spinner spinnerbank;
 
     EditText txtnama, txthp, txtalamat, txtkodepos, txtemail, txtrek, txtpemilik, txtcabang, txtwa, txtpinbb;
-    String get_nama, get_hp, get_alamat, get_kodepos, get_email, get_rek, get_pemilik, get_cabang, get_wa, get_pinbb;
-    String var_nama, var_hp, var_alamat, var_kodepos, var_email, var_rek,var_pemilik, var_cabang, var_wa, var_pinbb;
+    String get_nama, get_hp, get_alamat, get_kodepos, get_email, get_rek, get_pemilik, get_cabang, get_wa, get_pinbb, get_regional;
+    String var_nama, var_hp, var_alamat, var_kodepos, var_email, var_rek,var_pemilik, var_cabang, var_wa, var_pinbb, var_regional;
 
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
@@ -196,7 +196,6 @@ public class EditdataPribadi extends AppCompatActivity {
         txtalamat.setText("" + get_alamat);
         txtwa.setText("" + get_wa);
         txtpinbb.setText("" + get_pinbb);
-
     }
 
     public void showAddDialog() {
@@ -329,6 +328,8 @@ public class EditdataPribadi extends AppCompatActivity {
         var_kodepos = txtkodepos.getText().toString();
         var_wa = txtwa.getText().toString();
         var_pinbb = txtpinbb.getText().toString();
+        var_regional = L_Regional.getSelectedItem().toString();
+        var_rek = txtrek.getText().toString();
 
         Intent parsing = null;
         parsing = new Intent(EditdataPribadi.this, TampilanPribadi.class);
@@ -340,6 +341,8 @@ public class EditdataPribadi extends AppCompatActivity {
         bb.putString("panggilkodepos", var_kodepos);
         bb.putString("panggilwhatsapp", var_wa);
         bb.putString("panggilpinbb", var_pinbb);
+        bb.putString("panggilregional", var_regional);
+        bb.putString("panggilrekening", var_rek);
         parsing.putExtras(bb);
         startActivity(parsing);
         Toast.makeText(EditdataPribadi.this, "Update Data Pribadi berhasil", Toast.LENGTH_SHORT).show();

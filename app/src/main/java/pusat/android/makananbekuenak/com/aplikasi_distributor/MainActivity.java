@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         btnBatal = (Button)tampil.findViewById(R.id.btnBtl);
         btnKirim = (Button)tampil.findViewById(R.id.btnKirim);
 
-        //penerima.setText(item.getNama());
+        penerima.setText(item.getNama());
         //tgl_penerima.setText(item.getTanggal_pesan());
 
         // get the current date
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
             private void cekData() {
                 adapter.UpdataStatus();
                 //((ListItemAdapterPesanan) lvItem.getAdapter()).refreshList();
-                //item.setNama(penerima.getText().toString());
+                item.setNama(penerima.getText().toString());
                 //item.setTanggal_pesan(tgl_penerima.getText().toString());
                 //adapter.updateItem(item);
                         Toast.makeText(
