@@ -84,58 +84,59 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ListItemAdapterPesanan(MainActivity.this, items);
 
         lvItem.setAdapter(adapter);
-        lvItem.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
-            @Override
-            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-                Item_Pesanan item = (Item_Pesanan) lvItem.getAdapter().getItem(position);
-                item.setSelected(checked);
-            }
 
-            @Override
-            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-                MenuInflater inflater = getMenuInflater();
-                inflater.inflate(R.menu.menu_main, menu);
-                mode.setTitle("Select Items");
-                return true;
-            }
-
-            @Override
-            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-                return false;
-            }
-
-            @Override
-            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.action_settings:
-                        StringBuilder sb = new StringBuilder();
-                        for(int i = 0; i < lvItem.getAdapter().getCount(); i++){
-                            Item_Pesanan x = (Item_Pesanan) lvItem.getAdapter().getItem(i);
-                            if(x.isSelected()){
-                                sb.append(x.getNo_order());
-                                sb.append(", ");
-                            }
-                        }
-                        String text = sb.toString();
-                        text = text.substring(0, text.length() - 2);
-                        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
-                        mode.finish();
-                        break;
-                    default:
-                        Toast.makeText(MainActivity.this, "Clicked " + item.getTitle(),
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                }
-                return true;
-            }
-
-            @Override
-            public void onDestroyActionMode(ActionMode mode) {
-                adapter.unselectAllItems();
-            }
-        });
+//        lvItem.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
+//            @Override
+//            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
+//                Item_Pesanan item = (Item_Pesanan) lvItem.getAdapter().getItem(position);
+//                item.setSelected(checked);
+//            }
+//
+//            @Override
+//            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+//                MenuInflater inflater = getMenuInflater();
+//                inflater.inflate(R.menu.menu_list_item, menu);
+//                mode.setTitle("Select Items");
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+//                switch (item.getItemId()) {
+//                    case R.id.action_submit:
+//                        StringBuilder sb = new StringBuilder();
+//                        for(int i = 0; i < lvItem.getAdapter().getCount(); i++){
+//                            Item_Pesanan x = (Item_Pesanan) lvItem.getAdapter().getItem(i);
+//                            if(x.isSelected()){
+//                                sb.append(x.getNo_order());
+//                                sb.append(", ");
+//                            }
+//                        }
+//                        String text = sb.toString();
+//                        text = text.substring(0, text.length() - 2);
+//                        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+//                        mode.finish();
+//                        break;
+//                    default:
+//                        Toast.makeText(MainActivity.this, "Clicked " + item.getTitle(),
+//                                Toast.LENGTH_SHORT).show();
+//                        break;
+//                }
+//                return true;
+//            }
+//
+//            @Override
+//            public void onDestroyActionMode(ActionMode mode) {
+//                adapter.unselectAllItems();
+//            }
+//        });
     }
-    
+
     public void NotifikasiResi(final Item_Pesanan item) {
         //---
         final Dialog dialog = new Dialog(MainActivity.this);

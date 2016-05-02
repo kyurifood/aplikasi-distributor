@@ -188,36 +188,13 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.7"
+            android:layout_weight="0.5"
             android:enabled="false"
             android:textColor="@color/black"
             android:id="@+id/provinsi"/>
     </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="KOTA"
-            android:textSize="7pt"
-            android:textStyle="bold"
-            android:layout_weight="1"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.7"
-            android:enabled="false"
-            android:textColor="@color/black"
-            android:id="@+id/KOTA"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

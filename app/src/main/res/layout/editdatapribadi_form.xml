@@ -104,17 +104,6 @@
         android:entries="@array/proklist"
         android:id="@+id/spinprov" />
 
-    <TextView
-        android:padding="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="KOTA"
-        android:id="@+id/textView14" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinkota" />
 
     <TextView
         android:padding="5dp"
