@@ -21,7 +21,7 @@
         <Button style="@style/Hijau"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Produk"
+            android:text="|Produk"
             android:textSize="20dp"
             android:layout_weight="1"
             android:id="@+id/produk"
@@ -40,7 +40,6 @@
             android:layout_gravity="center_horizontal" />
 
         <Button
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             style="@style/Hijau"
@@ -62,8 +61,6 @@
             android:layout_weight="1"
             android:drawableLeft="@drawable/ic_email"
             android:layout_gravity="center_horizontal" />
-
-
         <Button
             style="@style/Hijau"
             android:layout_width="match_parent"
@@ -74,6 +71,4 @@
             android:id="@+id/pengaturan"
             android:drawableLeft="@drawable/ic_cogwheel"
             android:layout_gravity="center_horizontal" />
-
-
 </LinearLayout>

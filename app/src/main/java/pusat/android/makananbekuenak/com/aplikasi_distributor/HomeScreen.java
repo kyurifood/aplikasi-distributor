@@ -7,10 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class HomeScreen extends AppCompatActivity{
 
     Button btn_pesanan , btn_pengaturan , btn_laporan , btn_produk , btn_kotakmasuk;
+    EditText bn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class HomeScreen extends AppCompatActivity{
             public void onClick(View arg0) {
 
                 Intent myIntent = new Intent(HomeScreen.this,
-                        Kosong.class);
+                        Laporan.class);
                 startActivity(myIntent);
             }
         });
@@ -52,7 +55,7 @@ public class HomeScreen extends AppCompatActivity{
             public void onClick(View arg0) {
 
                 Intent myIntent = new Intent(HomeScreen.this,
-                        Kosong.class);
+                        UpdateStokmagesActivity.class);
                 startActivity(myIntent);
             }
         });
@@ -68,16 +71,9 @@ public class HomeScreen extends AppCompatActivity{
         });
 
 
-       // Intent intent = new Intent(this, LoginActivity.class);
-       // startActivity(intent);
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
 
-//        Button produk=(Button)findViewById(R.id.produk);
-//        produk.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), pusat.android.makananbekuenak.com.aplikasi_distributor.RegistrasiDistributor.class);
-//                startActivity(intent);
-//            }
-//        });
     }
 
     @Override
@@ -96,15 +92,16 @@ public class HomeScreen extends AppCompatActivity{
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+                pengaturan();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-
-
-
-
+    public void pengaturan (){
+        Intent callme = new Intent(getApplicationContext(), Pengaturan.class);
+        startActivity(callme);
+    }
 
 }

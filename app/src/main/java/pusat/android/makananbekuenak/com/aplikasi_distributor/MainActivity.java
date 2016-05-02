@@ -12,7 +12,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     int mYear,mMonth, mDay;
     static final int DATE_DIALOG_ID = 1;
-    private String[] arrMonth = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+    private String[] arrMonth = {"Januari","Februari","Maret","April","Mei","Juni","Juli","Augustus","September","Oktober","November","Desember"};
     public ProgressDialog pDialog;
     DatePickerDialog datePicker;
     ListView lvItem;
@@ -44,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.black_ic_trolley);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         List<Item_Pesanan> items = new ArrayList<>();
         Item_Pesanan item1 = new Item_Pesanan();
@@ -61,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         item1.setOngkir("12.000");
         item1.setPajak("10.000");
         item1.setNominal("20000");
-
+        item1.setDikirim(false);
 
         Item_Pesanan item2 = new Item_Pesanan();
         item2.setNo_order("002");
@@ -78,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         item2.setOngkir("13.000");
         item2.setPajak("12.000");
         item2.setNominal("26000");
+        item2.setDikirim(false);
 
         Item_Pesanan item3 = new Item_Pesanan();
         item3.setNo_order("003");
@@ -94,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         item3.setOngkir("10.000");
         item3.setPajak("9.000");
         item3.setNominal("32000");
+        item3.setDikirim(false);
 
         items.add(item1);
         items.add(item2);
@@ -104,72 +111,86 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ListItemAdapterPesanan(MainActivity.this, items);
 
         lvItem.setAdapter(adapter);
-        lvItem.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
-            @Override
-            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-                Item_Pesanan item = (Item_Pesanan) lvItem.getAdapter().getItem(position);
-                item.setSelected(checked);
-            }
 
-            @Override
-            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-                MenuInflater inflater = getMenuInflater();
-                inflater.inflate(R.menu.menu_list_item, menu);
-                mode.setTitle("Select Items");
-                return true;
-            }
-
-            @Override
-            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-                return false;
-            }
-
-            @Override
-            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.action_submit:
-                        StringBuilder sb = new StringBuilder();
-                        for(int i = 0; i < lvItem.getAdapter().getCount(); i++){
-                            Item_Pesanan x = (Item_Pesanan) lvItem.getAdapter().getItem(i);
-                            if(x.isSelected()){
-                                sb.append(x.getNo_order());
-                                sb.append(", ");
-                            }
-                        }
-                        String text = sb.toString();
-                        text = text.substring(0, text.length() - 2);
-                        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
-                        mode.finish();
-                        break;
-                    default:
-                        Toast.makeText(MainActivity.this, "Clicked " + item.getTitle(),
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                }
-                return true;
-            }
-
-            @Override
-            public void onDestroyActionMode(ActionMode mode) {
-                adapter.unselectAllItems();
-            }
-        });
-
-
+//        lvItem.setMultiChoiceModeListener(new AbsListView.MultiChoiceModeListener() {
+//            @Override
+//            public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
+//                Item_Pesanan item = (Item_Pesanan) lvItem.getAdapter().getItem(position);
+//                item.setSelected(checked);
+//            }
+//
+//            @Override
+//            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+//                MenuInflater inflater = getMenuInflater();
+//                inflater.inflate(R.menu.menu_list_item, menu);
+//                mode.setTitle("Select Items");
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+//                switch (item.getItemId()) {
+//                    case R.id.action_submit:
+//                        StringBuilder sb = new StringBuilder();
+//                        for(int i = 0; i < lvItem.getAdapter().getCount(); i++){
+//                            Item_Pesanan x = (Item_Pesanan) lvItem.getAdapter().getItem(i);
+//                            if(x.isSelected()){
+//                                sb.append(x.getNo_order());
+//                                sb.append(", ");
+//                            }
+//                        }
+//                        String text = sb.toString();
+//                        text = text.substring(0, text.length() - 2);
+//                        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+//                        mode.finish();
+//                        break;
+//                    default:
+//                        Toast.makeText(MainActivity.this, "Clicked " + item.getTitle(),
+//                                Toast.LENGTH_SHORT).show();
+//                        break;
+//                }
+//                return true;
+//            }
+//
+//            @Override
+//            public void onDestroyActionMode(ActionMode mode) {
+//                adapter.unselectAllItems();
+//            }
+//        });
     }
 
-    public void NotifikasiResi() {
+    public void NotifikasiResi(final Item_Pesanan item) {
         //---
         final Dialog dialog = new Dialog(MainActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_LEFT_ICON);
         dialog.setContentView(R.layout.kirim_order_noresi);
         dialog.setCancelable(true);
         dialog.setTitle("Kirim Order");
+        dialog.setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.ic_mode_edit_black_24dp);
 
         modeKirim = (Spinner) dialog.findViewById(R.id.l_pengiriman);
         nomoResi = (EditText)dialog.findViewById(R.id.nmrResi);
-        btnPrs = (Button)dialog.findViewById(R.id.btnProses);
+        btnPrs = (Button)dialog.findViewById(R.id.btn_Proses);
         btnCancel = (Button)dialog.findViewById(R.id.btnKembali);
         dialog.show();
+
+        modeKirim.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(MainActivity.this, "Pilihan Pegiriman : " + modeKirim.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         btnPrs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,13 +203,14 @@ public class MainActivity extends AppCompatActivity {
                     {
                         Toast.makeText(MainActivity.this, "Kesalahan Pengisian Nomor Resi", Toast.LENGTH_SHORT).show();
                     }
+
                 } else cekResi();
             }
 
             private void cekResi() {
-
+                adapter.kirimOrder();
                 Toast.makeText(
-                        MainActivity.this, "Berhasil : No.Resi " + nomoResi.getText() + " Pengiriman : " + String.valueOf(modeKirim.getSelectedItem()) , Toast.LENGTH_LONG).show();
+                        MainActivity.this, "Berhasil : No.Resi " + nomoResi.getText() + " Pengiriman : " + String.valueOf(modeKirim.getSelectedItem()), Toast.LENGTH_LONG).show();
                 dialog.cancel();
             }
         });
@@ -198,23 +220,29 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Tombol Batal
                 Toast.makeText(MainActivity.this, "Anda Gagal Memasukan Nomor Resi", Toast.LENGTH_LONG).show();
-                dialog.cancel();
+                dialog.dismiss();
             }
         });
     }
 
-    public void UpdatePenerimaan(){
+    public void UpdatePenerimaan(final Item_Pesanan item){
 
         //---
         final Dialog tampil = new Dialog(MainActivity.this);
+        tampil.requestWindowFeature(Window.FEATURE_LEFT_ICON);
         tampil.setContentView(R.layout.update_status_penerimaan);
         tampil.setCancelable(true);
         tampil.setTitle("Update Status Penerimaan");
+        tampil.setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.ic_border_color_black_18dp);
 
         penerima = (EditText) tampil.findViewById(R.id.nmPenerima);
         tgl_penerima = (EditText) tampil.findViewById(R.id.tgl_penerimaan);
         btnBatal = (Button)tampil.findViewById(R.id.btnBtl);
         btnKirim = (Button)tampil.findViewById(R.id.btnKirim);
+
+        //penerima.setText(item.getNama());
+        //tgl_penerima.setText(item.getTanggal_pesan());
+
         // get the current date
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
@@ -243,18 +271,22 @@ public class MainActivity extends AppCompatActivity {
                     {
                         Toast.makeText(MainActivity.this, "Kesalahan Penginputan Data", Toast.LENGTH_SHORT).show();
                     }
-                }else if (!validasiTgl(tgl)){
+                } else if (!validasiTgl(tgl)) {
                     tgl_penerima.setError("Wajib Diisi");
                     {
                         Toast.makeText(MainActivity.this, "Kesalahan Penginputan Tanggal", Toast.LENGTH_SHORT).show();
                     }
 
-                }else cekData();
+                } else cekData();
             }
 
             private void cekData() {
-
-                Toast.makeText(
+                adapter.UpdataStatus();
+                //((ListItemAdapterPesanan) lvItem.getAdapter()).refreshList();
+                //item.setNama(penerima.getText().toString());
+                //item.setTanggal_pesan(tgl_penerima.getText().toString());
+                //adapter.updateItem(item);
+                        Toast.makeText(
                         MainActivity.this, "Berhasil : Penerima " + penerima.getText() +
                                 ", Tanggal Penerimaan : " + tgl_penerima.getText(), Toast.LENGTH_LONG).show();
                 tampil.cancel();
@@ -271,13 +303,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        penerima.setText("Reksin");
-        tgl_penerima.setText("May 05, 2016");
-
     }
 
     public boolean validasiResi(String kode) {
-        return kode.length() > 10;
+        return kode.length() > 9;
     }
 
     public boolean validasiNama(String nama) {
@@ -287,6 +316,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean validasiTgl(String tgl) {
         return tgl.length() > 0;
     }
+
+
 
 
     @Override
@@ -315,7 +346,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onCancel(DialogInterface dialog) {
             Calendar today = Calendar.getInstance();
-            tgl_penerima.setText("May 05, 2016");
+           // tgl_penerima.setText("May 05, 2016");
              /*
             String sdate = arrMonth[today.getTime().getMonth()] + " " + LPad(today.getTime().getDay()+ "", "0", 2) + ", " + today.getTime()
                     .getYear();
@@ -330,4 +361,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return new String(sret);
     }
+
+
+
 }

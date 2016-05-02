@@ -97,5 +97,8 @@ public class ListItemDistributor extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public void Item(int position, ItemDistributor newitem) {
+
+    }
 }
 
