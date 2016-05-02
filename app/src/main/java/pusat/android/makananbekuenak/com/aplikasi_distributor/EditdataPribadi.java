@@ -35,7 +35,7 @@ import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ItemDistrib
 
 public class EditdataPribadi extends AppCompatActivity {
 
-    private String[] Regional_List = {"sulawesi"};
+    private String[] Regional_List = {"sulawesi","bogor","DkiJakarta"};
     private String[] Provinsi_List = {};
     private String[] Kecamatan_List = {};
     private String[] Kelurahan_List = {};
@@ -95,9 +95,12 @@ public class EditdataPribadi extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    (Provinsi_List) = new String[]{"-", "Gorontalo"};
+                    (Provinsi_List) = new String[]{"-", "Gorontalo", "Makassar", "Kendari"};
 
-
+                }else if (position == 1){
+                    Provinsi_List = new  String[]{"-","1","2","3"};
+                }else if (position == 2){
+                    Provinsi_List = new  String[]{"-","4","5","6"};
                 }
                 adapter_propinsi = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_list_layout, Provinsi_List);
                 L_Propinsi.setAdapter(adapter_propinsi);
@@ -118,6 +121,12 @@ public class EditdataPribadi extends AppCompatActivity {
                 if (position == 1) {
                     Kecamatan_List = new String[]{"-", "Tibawa", "Paguyama", "Tolinggula"};
 
+                } else if (position == 2) {
+                    Kecamatan_List = new String[]{"-", "makassar1", "makassar2", "Makassar3"};
+
+                } else if (position == 3) {
+                    Kecamatan_List = new String[]{"-", "Kendari1", "kendari2", "Kendari3"};
+
                 } else if (position == 0) {
                     Kecamatan_List = new String[]{};
                 }
@@ -136,10 +145,10 @@ public class EditdataPribadi extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 1) {
-                    Kelurahan_List = new String[]{"-", "Tibawa kel", "Tibawa kel2", "Tibawa  kel3"};
+                    Kelurahan_List = new String[]{"-", "Tibawa kel", "Tibawa kel2", "Tibawa kel3"};
 
                 } else if (position == 2) {
-                    Kelurahan_List = new String[]{"-", "paguyaman kel", "paguyaman kel2", "paguyaman kel3"};
+                    Kelurahan_List = new String[]{"-", "paguyaman kel1", "paguyaman kel2", "paguyaman kel3"};
 
                 } else if (position == 3) {
                     Kelurahan_List = new String[]{"-", "Tolinggula Kel", "Tolinggula Kel2", "Tolinggula Kel3"};

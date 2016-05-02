@@ -25,7 +25,6 @@ import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.Item_Pesana
 /**
  * Created by opaw on 3/30/16.
  */
-
 public class ListItemAdapterPesanan extends BaseAdapter {
 
     String var_nama, var_tanggal, var_kode, var_bank, var_nominal, var_regional, var_distributor, var_marketer,
@@ -67,9 +66,6 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         final TextView bank = (TextView) convertView.findViewById(R.id.bank);
         final TextView nominal = (TextView) convertView.findViewById(R.id.nominal);
 
-
-        Button btnAction2 = (Button) convertView.findViewById(R.id.btn_detail);
-
         final ImageButton pop = (ImageButton) convertView.findViewById(R.id.btn_pop);
         final CheckBox lunas = (CheckBox) convertView.findViewById(R.id.cb_lunas);
         final CheckBox diterima = (CheckBox) convertView.findViewById(R.id.cb_diterima);
@@ -82,6 +78,19 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         nama.setText(item.getNama());
         bank.setText(item.getBank());
         nominal.setText(item.getNominal());
+
+//        btnAction1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                lunas.setChecked(true);
+//                if (lunas.isChecked()){
+//                    pop.setEnabled(true);
+//                    Toast.makeText(context, item.getNo_order() + ", Lunas",  Toast.LENGTH_SHORT).show();
+//                }else {
+//                    pop.setEnabled(false);
+//                }
+//            }
+//        });
 
         //opsi menu
         pop.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +138,7 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         });
         //batas opsi menu
 
+<<<<<<< HEAD
         btnAction2.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -172,6 +182,8 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         });
 
 
+=======
+>>>>>>> db4649bb183ea1f91b14a7d75ec14fe089af847d
         return convertView;
     }
 
