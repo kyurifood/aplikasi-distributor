@@ -1,77 +1,52 @@
 package pusat.android.makananbekuenak.com.aplikasi_distributor;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import pusat.android.makananbekuenak.com.aplikasi_distributor.adapter.ListBarangAdapter;
-import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ListBarang;
+import android.view.View;
+import android.widget.Button;
 
 public class Laporan extends AppCompatActivity {
 
-    ListView lvBarang;
+    Button b_produk, b_distributor, b_marketer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.laporan);
 
-        lvBarang = (ListView) findViewById(R.id.listview);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.black_ic_clipboard);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        ListBarang barang1 = new ListBarang();
-        barang1.setNama_produk("KARAPAO");
-        barang1.setBaru("Baru");
-        barang1.setLunas("Lunas");
-        barang1.setDikirim("DiKirim");
-        barang1.setDiterima("DiTerima");
+        b_distributor = (Button) findViewById(R.id.btn_distributor);
+        b_marketer = (Button) findViewById(R.id.btn_marketer);
+        b_produk = (Button) findViewById(R.id.btn_produk);
 
-        ListBarang barang2 = new ListBarang();
-        barang2.setNama_produk("TERIAKI");
-        barang2.setBaru("Baru");
-        barang2.setLunas("Lunas");
-        barang2.setDikirim("DiKirim");
-        barang2.setDiterima("Diterima");
+        b_produk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callme = new Intent(getApplicationContext(), Kosong.class);
+                startActivity(callme);
+            }
+        });
 
-        List<ListBarang> listBarang = new ArrayList<>();
-        listBarang.add(barang1);
-        listBarang.add(barang2);
+        b_marketer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callme = new Intent(getApplicationContext(), Kosong.class);
+                startActivity(callme);
+            }
+        });
 
-        lvBarang.setAdapter(new ListBarangAdapter(getApplicationContext(), listBarang));
+        b_distributor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callme = new Intent(getApplicationContext(), Kosong.class);
+                startActivity(callme);
+            }
+        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();ListBarang barang2 = new ListBarang();
-        barang2.setBaru("Baru");
-        barang2.setLunas("Lunas");
-        barang2.setDikirim("DiKirim");
-        barang2.setDiterima("Diterima");
-        barang2.setCheck1(false);
-        barang2.setCheck2(true);
-        barang2.setCheck3(false);
-        barang2.setCheck4(true);
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

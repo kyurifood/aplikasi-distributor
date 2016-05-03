@@ -12,6 +12,7 @@
         android:layout_marginLeft="13dp">
 
         <Button
+            style="@style/Hijau"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Ganti Password"
@@ -26,6 +27,7 @@
         android:layout_marginLeft="13dp">
 
         <Button
+            style="@style/Hijau"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Info Pribadi"
@@ -42,6 +44,7 @@
         android:layout_marginLeft="13dp">
 
         <Button
+            style="@style/Hijau"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Notifikasi"

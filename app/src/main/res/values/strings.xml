@@ -4,14 +4,94 @@
     <string name="action_settings">Settings</string>
 
 
-    <string name="pk1">Pilih Regional</string>
-    <string name="pk2">Sulawesi</string>
-    <string name="pk3">Kalimanta</string>
-    <string name="pk4">Sumatra</string>
+    <string name="pk1">Pilih REGIONAL</string>
+    <string name="pk2">Pulau SULAWESI</string>
+    <string name="pk3">Pulau KALIMANTAN</string>
+    <string name="pk4">Pulau SUMATRA</string>
+    <string name="pk5">Pulau JAWA</string>
+    <string name="pk6">Pulau NUSA TENGARA DAN BALI</string>
     <string-array name="pklist">
         <item>@string/pk1</item>
         <item>@string/pk2</item>
         <item>@string/pk3</item>
         <item>@string/pk4</item>
+        <item>@string/pk5</item>
+        <item>@string/pk6</item>
     </string-array>
+
+    <string name="p1">Pilih Pengiriman</string>
+    <string name="p2">JNE</string>
+    <string name="p3">TIKI</string>
+    <string-array name="pList">
+        <item>@string/p2</item>
+        <item>@string/p3</item>
+    </string-array>
+
+
+    <string name="prok0">Pilih PROVINSI</string>
+    <string name="prok1">ACEH</string>
+    <string name="prok2">SUMATERA UTARA</string>
+    <string name="prok3">SUMATRA BARAT</string>
+    <string name="prok4">RIAU</string>
+    <string name="prok5">JAMBI</string>
+    <string name="prok6">SUMATERA SELATAN</string>
+    <string name="prok7">BENGKULU</string>
+    <string name="prok8">LAMPUNG</string>
+    <string name="prok9">KEP. BANGKA BELITUNG</string>
+    <string name="prok10">KEP. RIAU</string>
+    <string name="prok11">DKI JAKARTA</string>
+    <string name="prok12">JAWA BARAT</string>
+    <string name="prok13">JAWA TENGAH</string>
+    <string name="prok14">BANTEN</string>
+    <string name="prok15">JAWA TIMUR</string>
+    <string name="prok16">YOGYAKARTA</string>
+    <string name="prok17">BALI</string>
+    <string name="prok18">NUSA TENGGARA BARAT</string>
+    <string name="prok19">NUSA TENGGARA TIMUR</string>
+    <string name="prok20">KALIMANTAN BARAT</string>
+    <string name="prok21">KALIMANTAN TENGAH</string>
+    <string name="prok22">KALIMANTAN SELATAN</string>
+    <string name="prok23">KALIMANTAN TIMUR</string>
+    <string name="prok24">KALIMANTAN UTARA</string>
+    <string name="prok25">SULAWESI UTARA</string>
+    <string name="prok26">SULAWESI TENGAH</string>
+    <string name="prok27">SULAWESI SELATAN</string>
+    <string name="prok28">SULAWESI TENGGARA</string>
+    <string name="prok29">SULAWESI GORONTALO</string>
+    <string name="prok30">SULAWESI BARAT</string>
+    <string-array name="proklist">
+        <item>@string/prok0</item>
+        <item>@string/prok1</item>
+        <item>@string/prok2</item>
+        <item>@string/prok3</item>
+        <item>@string/prok4</item>
+        <item>@string/prok5</item>
+        <item>@string/prok6</item>
+        <item>@string/prok7</item>
+        <item>@string/prok8</item>
+        <item>@string/prok9</item>
+        <item>@string/prok10</item>
+        <item>@string/prok11</item>
+        <item>@string/prok12</item>
+        <item>@string/prok13</item>
+        <item>@string/prok14</item>
+        <item>@string/prok15</item>
+        <item>@string/prok16</item>
+        <item>@string/prok17</item>
+        <item>@string/prok18</item>
+        <item>@string/prok19</item>
+        <item>@string/prok20</item>
+        <item>@string/prok21</item>
+        <item>@string/prok22</item>
+        <item>@string/prok23</item>
+        <item>@string/prok24</item>
+        <item>@string/prok25</item>
+        <item>@string/prok26</item>
+        <item>@string/prok27</item>
+        <item>@string/prok28</item>
+        <item>@string/prok29</item>
+        <item>@string/prok30</item>
+
+    </string-array>
+
 </resources>

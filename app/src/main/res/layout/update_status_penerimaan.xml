@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="12dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+         <EditText android:textColor="@color/black"
+            android:id="@+id/nmPenerima"
+            android:hint="Nama Penerima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:inputType="textPersonName"/>
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:textColor="@color/black"
+                android:id="@+id/tgl_penerimaan"
+                android:hint="Tanggal Penerimaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            style="@style/ComponentLayout"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:layout_marginBottom="18dp">
+
+            <Button
+                style="@style/Merah"
+                android:id="@+id/btnBtl"
+                android:text="Batal" />
+
+            <Button
+                style="@style/Hijau"
+                android:id="@+id/btnKirim"
+                android:text="Kirim"/>
+
+        </LinearLayout>
+
+
+</LinearLayout>

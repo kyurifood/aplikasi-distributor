@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
+import pusat.android.makananbekuenak.com.aplikasi_distributor.RegistrasiDistributor;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ItemDistributor;
 
 /**
@@ -71,11 +72,23 @@ public class ListItemDistributor extends BaseAdapter {
             }
         });
 
+        Button edit = (Button) convertView.findViewById(R.id.edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((RegistrasiDistributor) context).showEditDialog(position, item);
+            }
+        });
+
         return convertView;
     }
 
     public void addItem(ItemDistributor item){
         items.add(item);
+        notifyDataSetChanged();
+    }
+    public void editItem(int position, ItemDistributor item){
+        items.set(position, item);
         notifyDataSetChanged();
     }
 
@@ -84,5 +97,8 @@ public class ListItemDistributor extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public void Item(int position, ItemDistributor newitem) {
+
+    }
 }
 
