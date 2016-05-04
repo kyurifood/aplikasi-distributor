@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(MainActivity.this);
         dialog.requestWindowFeature(Window.FEATURE_LEFT_ICON);
         dialog.setContentView(R.layout.kirim_order_noresi);
-        dialog.setCancelable(true);
+        dialog.setCancelable(false);
         dialog.setTitle("Kirim Order");
         dialog.setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.ic_mode_edit_black_24dp);
 
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
         final Dialog tampil = new Dialog(MainActivity.this);
         tampil.requestWindowFeature(Window.FEATURE_LEFT_ICON);
         tampil.setContentView(R.layout.update_status_penerimaan);
-        tampil.setCancelable(true);
+        tampil.setCancelable(false);
         tampil.setTitle("Update Status Penerimaan");
         tampil.setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.ic_border_color_black_18dp);
 

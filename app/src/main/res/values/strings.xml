@@ -4,14 +4,13 @@
     <string name="action_settings">Settings</string>
 
 
-    <string name="pk1">Pilih REGIONAL</string>
-    <string name="pk2">Pulau SULAWESI</string>
-    <string name="pk3">Pulau KALIMANTAN</string>
-    <string name="pk4">Pulau SUMATRA</string>
-    <string name="pk5">Pulau JAWA</string>
-    <string name="pk6">Pulau NUSA TENGARA DAN BALI</string>
+    <string name="pk1">Pilih Bank</string>
+    <string name="pk2">Mandiri</string>
+    <string name="pk3">Muamalat</string>
+    <string name="pk4">BRI</string>
+    <string name="pk5">BCA</string>
+    <string name="pk6">BNI</string>
     <string-array name="pklist">
-        <item>@string/pk1</item>
         <item>@string/pk2</item>
         <item>@string/pk3</item>
         <item>@string/pk4</item>
