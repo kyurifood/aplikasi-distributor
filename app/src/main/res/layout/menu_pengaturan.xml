@@ -3,18 +3,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/component_padding_margin"
     android:gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp">
+        >
 
         <Button
             style="@style/Hijau"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/padding_button"
             android:text="Ganti Password"
             android:id="@+id/ganti_password"
             android:layout_gravity="center_horizontal" />
@@ -23,13 +23,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp">
+        >
 
         <Button
             style="@style/Hijau"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/padding_button"
             android:text="Info Pribadi"
             android:id="@+id/info_pribadi"
             android:layout_gravity="center_horizontal" />
@@ -40,13 +39,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp">
+       >
 
         <Button
             style="@style/Hijau"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/padding_button"
             android:text="Notifikasi"
             android:id="@+id/notifkasi"
             android:layout_gravity="center_horizontal" />

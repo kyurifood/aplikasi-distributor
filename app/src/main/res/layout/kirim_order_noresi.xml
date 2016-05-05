@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_marginTop="12dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
+    android:padding="@dimen/layout_padding_margin"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,31 +9,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Pengiriman"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="15dp"/>
+        />
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/l_pengiriman"
         style="@style/spinnerDropDownItemStyle"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+
         android:prompt="@string/p1"
         android:entries="@array/pList"
         android:spinnerMode="dialog"
         android:gravity="center">
     </Spinner>
     <View style="@style/HorizontalDivider"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"/>
+        />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp">
+        android:layout_height="wrap_content">
         <EditText android:id="@+id/nmrResi"
             android:textColor="@color/black"
             android:layout_width="match_parent"
@@ -51,7 +42,7 @@
         android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_marginTop="18dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.75"
@@ -59,7 +50,7 @@
         android:layout_gravity="center_horizontal"
         android:gravity="right"
         android:orientation="horizontal"
-        android:layout_marginBottom="18dp">
+        >
 
         <Button
             style="@style/Merah"
@@ -74,8 +65,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_Proses"
             android:text="Kirim"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="15dp"/>
+           />
 
     </LinearLayout>
         </LinearLayout>
