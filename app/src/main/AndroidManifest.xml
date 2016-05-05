@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:label="aplikasi-distributor"
+        android:label="@string/app_name"
         android:theme="@style/CustomActionBarTheme">
 
         <activity
@@ -23,15 +23,7 @@
         <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity"
             android:theme="@style/AppTheme.Dark" />
 
-        <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.LoginActivity"
-            android:theme="@style/AppTheme.Dark">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+        <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.LoginActivity"/>
 
         <activity
             android:name=".EditdataPribadi"
