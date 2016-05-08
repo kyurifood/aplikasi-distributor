@@ -1,4 +1,4 @@
-package pusat.android.makananbekuenak.com.aplikasi_distributor;
+package pusat.android.makananbekuenak.com.aplikasi_distributor.ui;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -6,14 +6,9 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -26,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.adapter.ListItemAdapterPesanan;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.Item_Pesanan;
 

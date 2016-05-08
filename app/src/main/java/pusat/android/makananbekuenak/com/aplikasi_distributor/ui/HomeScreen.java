@@ -1,4 +1,4 @@
-package pusat.android.makananbekuenak.com.aplikasi_distributor;
+package pusat.android.makananbekuenak.com.aplikasi_distributor.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
 
 public class HomeScreen extends AppCompatActivity{
 

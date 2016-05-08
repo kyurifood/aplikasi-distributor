@@ -1,4 +1,4 @@
-package pusat.android.makananbekuenak.com.aplikasi_distributor;
+package pusat.android.makananbekuenak.com.aplikasi_distributor.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +22,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.adapter.ListItemDistributor;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ItemDistributor;
 

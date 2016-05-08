@@ -8,7 +8,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
+<<<<<<< HEAD
             android:name=".SplashScreen">
+=======
+            android:name=".ui.HomeScreen">
+>>>>>>> c4d6f46590ca7d43ee11d049fdd015b7d4752091
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -16,60 +20,62 @@
         </activity>
         <activity android:name=".HomeScreen"/>
         <activity
-            android:name=".RegistrasiDistributor"
-            android:theme="@style/AppTheme.baru"/>
-        <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity"
+            android:name=".ui.RegistrasiDistributor"/>
+        <activity android:name=".ui.SignupActivity"
             android:theme="@style/AppTheme.Dark" />
 
-        <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.LoginActivity"/>
+        <activity android:name=".ui.LoginActivity"/>
 
         <activity
-            android:name=".EditdataPribadi"
+            android:name=".ui.EditdataPribadi"
             android:label="Edit Data Pribadi"
             android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="adjustPan|adjustResize" >
+            android:windowSoftInputMode="adjustPan|adjustResize"
+            android:parentActivityName=".ui.TampilanPribadi">
             <!--Coding Kembali Ke Menu Utama-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.TampilanPribadi" />
+                android:value=".ui.TampilanPribadi" />
             <!-- END Coding Kembali Ke Menu Utama-->
 
         </activity>
         <activity
-            android:name=".Pengaturan"
+            android:name=".ui.Pengaturan"
             android:label=" Pengaturan">
         </activity>
         <activity
-            android:name=".Laporan"
+            android:name=".ui.Laporan"
             android:label=" Laporan">
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:label=" Pesanan">
         </activity>
-        <activity android:name=".TampilanPribadi"
+        <activity android:name=".ui.TampilanPribadi"
             android:label="Info Pribadi"
             android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="adjustPan|adjustResize" >
+            android:windowSoftInputMode="adjustPan|adjustResize"
+            android:parentActivityName=".ui.Pengaturan">
             <!--Coding Kembali Ke Menu Utama-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.Pengaturan" />
+                android:value=".ui.Pengaturan" />
             <!-- END Coding Kembali Ke Menu Utama-->
         </activity>
-        <activity android:name=".Kosong"/>
+        <activity android:name=".ui.Kosong"/>
 
-        <activity android:name=".Lihatdetail"
+        <activity android:name=".ui.Lihatdetail"
             android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="adjustPan|adjustResize" >
+            android:windowSoftInputMode="adjustPan|adjustResize"
+            android:parentActivityName=".ui.MainActivity">
             <!--Coding Kembali Ke Menu Utama-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.MainActivity" />
+                android:value=".ui.MainActivity" />
             <!-- END Coding Kembali Ke Menu Utama-->
         </activity>
         <activity
-            android:name=".UpdateStokmagesActivity"
+            android:name=".ui.UpdateStokmagesActivity"
             android:label=" Update Stok">
         </activity>/
     </application>

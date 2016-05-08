@@ -1,4 +1,4 @@
-package pusat.android.makananbekuenak.com.aplikasi_distributor;
+package pusat.android.makananbekuenak.com.aplikasi_distributor.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
+
+import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
+import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.UpdateStokItemDetails;
 
 public class UpdateStokBaseAdapter extends BaseAdapter {
 	private static ArrayList<UpdateStokItemDetails> updateStokItemDetailsrrayList;

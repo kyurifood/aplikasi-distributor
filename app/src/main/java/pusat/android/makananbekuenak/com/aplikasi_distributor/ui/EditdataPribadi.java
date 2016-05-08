@@ -1,7 +1,6 @@
-package pusat.android.makananbekuenak.com.aplikasi_distributor;
+package pusat.android.makananbekuenak.com.aplikasi_distributor.ui;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -17,18 +16,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.Toast;
-
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.adapter.ListItemDistributor;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ItemDistributor;
 
