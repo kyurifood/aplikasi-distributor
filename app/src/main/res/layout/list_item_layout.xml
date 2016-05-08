@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/Panel.Horizontal">
+    style="@style/Panel.Horizontal"
+    android:padding="@dimen/layout_padding_margin"
+    >
 
     <LinearLayout
+
         android:gravity="left"
         android:orientation="vertical"
+        android:padding="@dimen/padding_3dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="3dp"
+            android:padding="@dimen/padding_3dp"
             android:textSize="15sp"
             android:text="Bank"
             android:id="@+id/list_item_bank"/>
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="3dp"
+            android:padding="@dimen/padding_3dp"
             android:textSize="15sp"
             android:text="Rekening"
             android:id="@+id/list_item_rekening" />
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="3dp"
+            android:padding="@dimen/padding_3dp"
             android:textSize="15sp"
             android:text="Nama"
             android:id="@+id/list_item_nama" />
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="3dp"
+            android:padding="@dimen/padding_3dp"
             android:textSize="15sp"
             android:text="Cabang"
             android:id="@+id/list_item_cabang" />
@@ -41,6 +45,7 @@
 
     <LinearLayout style="@style/LayoutMatchParent.Vertical"
         android:orientation="vertical"
+
         android:gravity="right">
 
         <Button style="@style/RedButton"

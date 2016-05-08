@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/Panel.Vertical"
     android:layout_weight="1"
-    android:descendantFocusability="blocksDescendants">
+    android:descendantFocusability="blocksDescendants"
+    android:padding="@dimen/layout_padding_margin">
     <LinearLayout style="@style/ComponentLayout"
         android:orientation="horizontal"
         android:layout_weight="1"
