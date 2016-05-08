@@ -12,6 +12,7 @@ public class Item_Pesanan {
     private boolean selected;
     private boolean button;
     private boolean button2;
+<<<<<<< HEAD
     private String regional;
     private String distributor;
     private String marketer;
@@ -20,9 +21,7 @@ public class Item_Pesanan {
     private String alamat_penerima;
     private String produk;
     private String ongkir;
-    private String pajak;private boolean dikirim;
-    private boolean diterima;
-    private boolean lunas;
+    private String pajak;
 
     public String getRegional() {
         return regional;
@@ -93,8 +92,12 @@ public class Item_Pesanan {
     }
 
     public void setPajak(String pajak) {
-        this.pajak = pajak;}
-
+        this.pajak = pajak;
+    }
+=======
+    private boolean dikirim;
+    private boolean diterima;
+    private boolean lunas;
 
     public boolean isLunas() {
         return lunas;
@@ -120,6 +123,8 @@ public class Item_Pesanan {
 
     public void setDikirim(boolean dikirim) {
         this.dikirim = dikirim;    }
+
+>>>>>>> db4649bb183ea1f91b14a7d75ec14fe089af847d
 
     public boolean isButton2() {
         return button2;

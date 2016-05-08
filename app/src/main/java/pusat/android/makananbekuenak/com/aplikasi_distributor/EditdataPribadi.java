@@ -51,6 +51,7 @@ public class EditdataPribadi extends AppCompatActivity {
     private Spinner spinnerbank;
 
     EditText txtnama, txthp, txtalamat, txtkodepos, txtemail, txtrek, txtpemilik, txtcabang, txtwa, txtpinbb;
+
     String get_nama, get_hp, get_alamat, get_kodepos, get_email, get_rek, get_pemilik, get_cabang, get_wa, get_pinbb, get_regional, get_provinsi, get_kecamatan, get_kelurahan;
     String var_nama, var_hp, var_alamat, var_kodepos, var_email, var_rek, var_pemilik, var_cabang, var_wa, var_pinbb, var_regional, var_provinsi, var_kecamatan, var_kelurahan;
 
@@ -60,11 +61,6 @@ public class EditdataPribadi extends AppCompatActivity {
 
 
     List<ItemDistributor> items = new ArrayList<>();
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,16 +80,6 @@ public class EditdataPribadi extends AppCompatActivity {
         txtemail = (EditText) findViewById(R.id.editemail);
         txtwa = (EditText) findViewById(R.id.editwa);
         txtpinbb = (EditText) findViewById(R.id.editbb);
-
-//        Spinner mSpinner= (Spinner)findViewById(R.id.spinregional);
-//        Spinner pSpinner= (Spinner)findViewById(R.id.spinprov);
-//        Spinner kSpinner= (Spinner)findViewById(R.id.spinkec);
-//        Spinner lSpinner= (Spinner)findViewById(R.id.spinkel);
-//
-//        mSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
-//        pSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
-//        kSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
-//        lSpinner.setOnItemSelectedListener(new OnSpinnerItemClicked());
 
 
         L_Regional = (Spinner) findViewById(R.id.spinregional);
@@ -221,13 +207,6 @@ public class EditdataPribadi extends AppCompatActivity {
         txtalamat.setText("" + get_alamat);
         txtwa.setText("" + get_wa);
         txtpinbb.setText("" + get_pinbb);
-
-
-
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     public void showAddDialog() {
@@ -359,6 +338,7 @@ public class EditdataPribadi extends AppCompatActivity {
         var_wa = txtwa.getText().toString();
         var_pinbb = txtpinbb.getText().toString();
         var_regional = L_Regional.getSelectedItem().toString();
+        var_rek = txtrek.getText().toString();
         var_provinsi = L_Propinsi.getSelectedItem().toString();
         var_kecamatan = L_Kecamatan.getSelectedItem().toString();
         var_kelurahan = L_Kelurahan.getSelectedItem().toString();
@@ -377,6 +357,7 @@ public class EditdataPribadi extends AppCompatActivity {
         bb.putString("panggilwhatsapp", var_wa);
         bb.putString("panggilpinbb", var_pinbb);
         bb.putString("panggilregional", var_regional);
+        bb.putString("panggilrekening", var_rek);
         bb.putString("panggilprovinsi", var_provinsi);
         bb.putString("panggilkecamatan", var_kecamatan);
         bb.putString("panggilkelurahan", var_kelurahan);
@@ -394,13 +375,6 @@ public class EditdataPribadi extends AppCompatActivity {
         return matcher.matches();
     }
 
-    public boolean validasiPass(String pass) {
-        return pass.length() > 4;
-    }
-
-    //    public boolean validasiCPass(String cpass) {
-//        return cpass.length() > 0;
-//    }
     public boolean validateNama(String nama) {
         return nama.length() > 0;
     }
@@ -464,9 +438,7 @@ public class EditdataPribadi extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
         if (id == R.id.action_pros) {
 

@@ -18,7 +18,10 @@ public class HomeScreen extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.home_screen);
+
+        getSupportActionBar().setTitle("Distributor");
 
         btn_pesanan = (Button) findViewById(R.id.pesanana);
         btn_pesanan.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +92,6 @@ public class HomeScreen extends AppCompatActivity{
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
                 pengaturan();

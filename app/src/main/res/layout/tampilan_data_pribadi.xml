@@ -310,7 +310,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.7"
             android:enabled="false"
             android:textColor="@color/black"
             android:id="@+id/nomorrekening"/>
@@ -334,7 +334,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.7"
             android:enabled="false"
             android:textColor="@color/black"
             android:id="@+id/namarekening"/>

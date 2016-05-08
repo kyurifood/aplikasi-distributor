@@ -6,40 +6,29 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-<<<<<<< HEAD
-
         android:theme="@style/AppTheme" >
-
-
         <activity
-            android:name=".HomeScreen"
-            android:label="Homescren">
-
-=======
-        android:label="Distributor"
-        android:theme="@style/CustomActionBarTheme">
-
-        <activity
-            android:name=".HomeScreen">
->>>>>>> 306e6e3a42644eeeb0d02db49d53ca8d4bd21f4f
+            android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-
+        <activity android:name=".HomeScreen"/>
         <activity
             android:name=".RegistrasiDistributor"
             android:theme="@style/AppTheme.baru"/>
-        <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.LoginActivity" android:theme="@style/AppTheme.Dark" />
-        <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.SignupActivity"
+            android:theme="@style/AppTheme.Dark" />
 
-        <activity
-            android:name=".UpdateStokmagesActivity"
-            android:label=" update stok">
+        <activity android:name="pusat.android.makananbekuenak.com.aplikasi_distributor.LoginActivity"
+            android:theme="@style/AppTheme.Dark">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
 
         <activity
@@ -52,6 +41,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.TampilanPribadi" />
             <!-- END Coding Kembali Ke Menu Utama-->
+
         </activity>
         <activity
             android:name=".Pengaturan"
@@ -76,11 +66,19 @@
             <!-- END Coding Kembali Ke Menu Utama-->
         </activity>
         <activity android:name=".Kosong"/>
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
 
+        <activity android:name=".Lihatdetail"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
+            <!--Coding Kembali Ke Menu Utama-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pusat.android.makananbekuenak.com.aplikasi_distributor.MainActivity" />
+            <!-- END Coding Kembali Ke Menu Utama-->
+        </activity>
+        <activity
+            android:name=".UpdateStokmagesActivity"
+            android:label=" Update Stok">
+        </activity>/
     </application>
 </manifest>
