@@ -242,12 +242,13 @@ public class EditdataPribadi extends AppCompatActivity {
 
                     if (adapter == null) {
                         items.add(item);
-                        adapter = new ListItemDistributor(EditdataPribadi.this, items);
+                        adapter = new ListItemDistributor(EditdataPribadi.this, items, "2");
                         lvItem.setAdapter(adapter);
                     } else {
                         adapter.addItem(item);
                     }
                     addNewItemDialog.dismiss();
+                    Toast.makeText(EditdataPribadi.this, "Bank Berhasil Ditambahkan", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -262,6 +263,8 @@ public class EditdataPribadi extends AppCompatActivity {
 
         addNewItemDialogBuilder.setView(promptsView);
         addNewItemDialogBuilder.setCancelable(false);
+        addNewItemDialogBuilder.setTitle("Tambah Bank");
+        addNewItemDialogBuilder.setIcon(R.drawable.ic_mode_edit_black_24dp);
         addNewItemDialog = addNewItemDialogBuilder.create();
         addNewItemDialog.show();
     }
@@ -294,21 +297,15 @@ public class EditdataPribadi extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!hasError()) {
-                    ItemDistributor item = new ItemDistributor();
+                    ItemDistributor newitem = new ItemDistributor();
                     String s = (String) (spinnerbank.getSelectedItem());
-                    item.setBank(s);
-                    item.setRekening(txtrek.getText().toString());
-                    item.setPemilik(txtpemilik.getText().toString());
-                    item.setCabang(txtcabang.getText().toString());
-
-                    if (adapter == null) {
-                        items.add(item);
-                        adapter = new ListItemDistributor(EditdataPribadi.this, items);
-                        lvItem.setAdapter(adapter);
-                    } else {
-                        adapter.addItem(item);
-                    }
+                    newitem.setBank(s);
+                    newitem.setRekening(txtrek.getText().toString());
+                    newitem.setPemilik(txtpemilik.getText().toString());
+                    newitem.setCabang(txtcabang.getText().toString());
+                    adapter.editItem(position, newitem);
                     addNewItemDialog.dismiss();
+                    Toast.makeText(EditdataPribadi.this, "Update Berhasil", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -323,6 +320,8 @@ public class EditdataPribadi extends AppCompatActivity {
 
         addNewItemDialogBuilder.setView(promptsView);
         addNewItemDialogBuilder.setCancelable(false);
+        addNewItemDialogBuilder.setTitle("Edit Bank");
+        addNewItemDialogBuilder.setIcon(R.drawable.ic_border_color_black_18dp);
         addNewItemDialog = addNewItemDialogBuilder.create();
         addNewItemDialog.show();
     }

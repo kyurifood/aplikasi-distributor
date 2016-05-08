@@ -8,8 +8,10 @@
     <!--dinem registrasi jagan hapus-->
     <dimen name="layout_padding_margin">16dp</dimen>
 
-    <dimen name="component_padding_margin">8dp</dimen>
+    <dimen name="component_padding_margin">10dp</dimen>
+    <dimen name="padding_3dp">3dp</dimen>
 
+    <dimen name="padding_button">65dp</dimen>
     <dimen name="line">0.5dp</dimen>
 
     <dimen name="border">1dp</dimen>

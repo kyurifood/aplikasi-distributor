@@ -128,12 +128,13 @@ public class RegistrasiDistributor extends AppCompatActivity {
 
                     if (adapter == null) {
                         items.add(item);
-                        adapter = new ListItemDistributor(RegistrasiDistributor.this, items);
+                        adapter = new ListItemDistributor(RegistrasiDistributor.this, items, "1");
                         lvItem.setAdapter(adapter);
                     } else {
                         adapter.addItem(item);
                     }
                     addNewItemDialog.dismiss();
+                    Toast.makeText(RegistrasiDistributor.this, "Bank Berhasil Ditambahkan", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -148,6 +149,8 @@ public class RegistrasiDistributor extends AppCompatActivity {
 
         addNewItemDialogBuilder.setView(promptsView);
         addNewItemDialogBuilder.setCancelable(false);
+        addNewItemDialogBuilder.setTitle("Tambah Bank");
+        addNewItemDialogBuilder.setIcon(R.drawable.ic_mode_edit_black_24dp);
         addNewItemDialog = addNewItemDialogBuilder.create();
         addNewItemDialog.show();
     }
@@ -178,17 +181,17 @@ public class RegistrasiDistributor extends AppCompatActivity {
 
         {
             @Override
-            public void onClick (View v){
+            public void onClick(View v) {
                 if (!hasError()) {
                     ItemDistributor newitem = new ItemDistributor();
-                    String s = (String)(spinnerbank.getSelectedItem());
+                    String s = (String) (spinnerbank.getSelectedItem());
                     newitem.setBank(s);
                     newitem.setRekening(txtrek.getText().toString());
                     newitem.setPemilik(txtpemilik.getText().toString());
                     newitem.setCabang(txtcabang.getText().toString());
-
                     adapter.editItem(position, newitem);
                     addNewItemDialog.dismiss();
+                    Toast.makeText(RegistrasiDistributor.this, "Update Berhasil", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -203,6 +206,8 @@ public class RegistrasiDistributor extends AppCompatActivity {
 
         addNewItemDialogBuilder.setView(promptsView);
         addNewItemDialogBuilder.setCancelable(false);
+        addNewItemDialogBuilder.setTitle("Edit Bank");
+        addNewItemDialogBuilder.setIcon(R.drawable.ic_border_color_black_18dp);
         addNewItemDialog = addNewItemDialogBuilder.create();
         addNewItemDialog.show();
     }

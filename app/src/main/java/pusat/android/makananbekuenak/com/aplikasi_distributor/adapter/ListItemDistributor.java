@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import pusat.android.makananbekuenak.com.aplikasi_distributor.EditdataPribadi;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.RegistrasiDistributor;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ItemDistributor;
@@ -20,11 +21,13 @@ import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ItemDistrib
 public class ListItemDistributor extends BaseAdapter {
     private Context context;
     private List<ItemDistributor> items;
+    private String flag;
 
 
-    public ListItemDistributor(Context context, List<ItemDistributor> items) {
+    public ListItemDistributor(Context context, List<ItemDistributor> items, String flag) {
         this.context = context;
         this.items = items;
+        this.flag = flag;
     }
 
     @Override
@@ -76,7 +79,11 @@ public class ListItemDistributor extends BaseAdapter {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((RegistrasiDistributor) context).showEditDialog(position, item);
+                if (flag.equals("1")){
+                    ((RegistrasiDistributor) context).showEditDialog(position, item);
+                }else {
+                    ((EditdataPribadi) context).showEditDialog(position, item);
+                }
             }
         });
 
