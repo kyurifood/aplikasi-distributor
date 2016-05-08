@@ -1,4 +1,4 @@
-package pusat.android.makananbekuenak.com.aplikasi_distributor;
+package pusat.android.makananbekuenak.com.aplikasi_distributor.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.adapter.ListItemDaftarBelanja;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.Item_lihat_detail;
 

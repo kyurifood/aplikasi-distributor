@@ -1,6 +1,5 @@
-package pusat.android.makananbekuenak.com.aplikasi_distributor;
+package pusat.android.makananbekuenak.com.aplikasi_distributor.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +8,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 import java.util.ArrayList;
+
+import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
+import pusat.android.makananbekuenak.com.aplikasi_distributor.adapter.UpdateStokBaseAdapter;
+import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.UpdateStokItemDetails;
 
 public class UpdateStokmagesActivity extends AppCompatActivity{
 

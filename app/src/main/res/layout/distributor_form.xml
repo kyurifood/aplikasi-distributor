@@ -173,8 +173,7 @@
         android:id="@+id/btnbank" />
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/LayoutMatchParent"
         android:scrollbarSize="3dp"
         android:layout_gravity="center"
         android:divider="@android:color/transparent"

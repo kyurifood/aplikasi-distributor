@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditdataPribadi">
+    tools:context=".ui.EditdataPribadi">
     
 
     <android.support.design.widget.TextInputLayout
@@ -154,8 +154,7 @@
         android:id="@+id/btnbank" />
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/LayoutMatchParent"
         android:scrollbarSize="3dp"
         android:layout_gravity="center"
         android:divider="@android:color/transparent"

@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import pusat.android.makananbekuenak.com.aplikasi_distributor.EditdataPribadi;
+import pusat.android.makananbekuenak.com.aplikasi_distributor.ui.EditdataPribadi;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
-import pusat.android.makananbekuenak.com.aplikasi_distributor.RegistrasiDistributor;
+import pusat.android.makananbekuenak.com.aplikasi_distributor.ui.RegistrasiDistributor;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.ItemDistributor;
 
 /**
