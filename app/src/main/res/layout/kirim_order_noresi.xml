@@ -8,8 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pengiriman"
-        />
+        android:text="Pengiriman"/>
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,12 +20,12 @@
         android:spinnerMode="dialog"
         android:gravity="center">
     </Spinner>
-    <View style="@style/HorizontalDivider"
-        />
+    <View style="@style/HorizontalDivider"/>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
         <EditText android:id="@+id/nmrResi"
             android:textColor="@color/black"
             android:layout_width="match_parent"
