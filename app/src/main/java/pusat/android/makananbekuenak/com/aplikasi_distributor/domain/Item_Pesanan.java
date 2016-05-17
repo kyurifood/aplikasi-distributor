@@ -23,6 +23,42 @@ public class Item_Pesanan {
     private String pajak;private boolean dikirim;
     private boolean diterima;
     private boolean lunas;
+    private String nomor;
+    private String pengirim;
+    private String nmPenerima;
+    private String tglTerima;
+
+    public String getNmPenerima() {
+        return nmPenerima;
+    }
+
+    public void setNmPenerima(String nmPenerima) {
+        this.nmPenerima = nmPenerima;
+    }
+
+    public String getTglTerima() {
+        return tglTerima;
+    }
+
+    public void setTglTerima(String tglTerima) {
+        this.tglTerima = tglTerima;
+    }
+
+    public String getNomor() {
+        return nomor;
+    }
+
+    public void setNomor(String nomor) {
+        this.nomor = nomor;
+    }
+
+    public String getPengirim() {
+        return pengirim;
+    }
+
+    public void setPengirim(String pengirim) {
+        this.pengirim = pengirim;
+    }
 
     public String getRegional() {
         return regional;

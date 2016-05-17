@@ -61,7 +61,7 @@
         </activity>
         <activity android:name=".ui.Kosong"/>
 
-        <activity android:name=".ui.Lihatdetail"
+        <activity android:name=".ui.Details"
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="adjustPan|adjustResize"
             android:parentActivityName=".ui.MainActivity">
@@ -74,6 +74,6 @@
         <activity
             android:name=".ui.UpdateStokmagesActivity"
             android:label=" Update Stok">
-        </activity>/
+        </activity>
     </application>
 </manifest>

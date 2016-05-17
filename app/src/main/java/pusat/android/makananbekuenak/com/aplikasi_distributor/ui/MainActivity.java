@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -152,6 +153,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
             private void cekResi() {
+                item.setPengirim(modeKirim.getSelectedItem().toString());
+                item.setNomor(nomoResi.getText().toString());
                 adapter.kirimOrder();
                 Toast.makeText(
                         MainActivity.this, "Berhasil : No.Resi " + nomoResi.getText() + " Pengiriman : " + String.valueOf(modeKirim.getSelectedItem()), Toast.LENGTH_LONG).show();
@@ -185,9 +188,7 @@ public class MainActivity extends AppCompatActivity {
         btnKirim = (Button)tampil.findViewById(R.id.btnKirim);
 
         penerima.setText(item.getNama());
-        //tgl_penerima.setText(item.getTanggal_pesan());
 
-        // get the current date
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
@@ -228,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
                 adapter.UpdataStatus();
                 ((ListItemAdapterPesanan) lvItem.getAdapter()).refreshList();
                 item.setNama(penerima.getText().toString());
-                //item.setTanggal_pesan(tgl_penerima.getText().toString());
+                item.setTglTerima(tgl_penerima.getText().toString());
                 adapter.updateItem(item);
                         Toast.makeText(
                         MainActivity.this, "Berhasil : Penerima " + penerima.getText() +
@@ -272,6 +273,7 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
+
     private DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear,int dayOfMonth) {
@@ -303,6 +305,21 @@ public class MainActivity extends AppCompatActivity {
         return new String(sret);
     }
 
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

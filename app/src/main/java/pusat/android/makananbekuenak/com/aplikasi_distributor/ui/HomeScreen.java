@@ -68,7 +68,7 @@ public class HomeScreen extends AppCompatActivity{
         btn_kotakmasuk.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                Intent myIntent = new Intent(HomeScreen.this,
+                Intent myIntent = new Intent(getApplicationContext(),
                         Kosong.class);
                 startActivity(myIntent);
             }

@@ -17,7 +17,8 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import pusat.android.makananbekuenak.com.aplikasi_distributor.ui.Lihatdetail;
+import pusat.android.makananbekuenak.com.aplikasi_distributor.ui.Details;
+import pusat.android.makananbekuenak.com.aplikasi_distributor.ui.DetailPesanan;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.ui.MainActivity;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.R;
 import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.Item_Pesanan;
@@ -29,7 +30,8 @@ import pusat.android.makananbekuenak.com.aplikasi_distributor.domain.Item_Pesana
 public class ListItemAdapterPesanan extends BaseAdapter {
 
     String var_nama, var_tanggal, var_kode, var_bank, var_nominal, var_regional, var_distributor, var_marketer,
-            var_costomer, var_nohp, var_alamatpenerima, var_produk, var_ongkir, var_pajak;
+            var_costomer, var_nohp, var_alamatpenerima, var_produk, var_ongkir, var_pajak, var_resi, var_pengirim,
+            var_nmpenerima, var_tgl;
     public Context context;
     private List<Item_Pesanan> items;
     private int updatePos;
@@ -130,8 +132,8 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         //batas opsi menu
 
         btnAction2.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
+
                 var_nama = nama.getText().toString();
                 var_bank = bank.getText().toString();
                 var_tanggal = tanggal_pesan.getText().toString();
@@ -146,10 +148,12 @@ public class ListItemAdapterPesanan extends BaseAdapter {
                 var_produk = String.valueOf(item.getProduk());
                 var_ongkir = String.valueOf(item.getOngkir());
                 var_pajak = String.valueOf(item.getPajak());
-
+                var_resi = String.valueOf(item.getNomor());
+                var_pengirim = String.valueOf(item.getPengirim());
+                var_tgl = String.valueOf(item.getTglTerima());
 
                 Intent i = null;
-                i = new Intent(context, Lihatdetail.class);
+                i = new Intent(context, Details.class);
                 Bundle b = new Bundle();
 
                 b.putString("panggil_nama", var_nama);
@@ -166,6 +170,9 @@ public class ListItemAdapterPesanan extends BaseAdapter {
                 b.putString("panggil_produk", var_produk);
                 b.putString("panggil_ongkir", var_ongkir);
                 b.putString("panggil_pajak", var_pajak);
+                b.putString("panggil_resi", var_resi);
+                b.putString("panggil_pengirim", var_pengirim);
+                b.putString("panggil_tgl", var_tgl);
                 i.putExtras(b);
                 context.startActivity(i);
             }
@@ -180,21 +187,22 @@ public class ListItemAdapterPesanan extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public void refreshList(){
+    public void refreshList() {
         notifyDataSetChanged();
     }
 
-    public void kirimOrder(){
+    public void kirimOrder() {
         Item_Pesanan item = items.get(updatePos);
         item.setDikirim(true);
         items.set(updatePos, item);
         notifyDataSetChanged();
     }
 
-    public void UpdataStatus(){
+    public void UpdataStatus() {
         Item_Pesanan item = items.get(updatePos);
         item.setDiterima(true);
         items.set(updatePos, item);
         notifyDataSetChanged();
     }
+
 }

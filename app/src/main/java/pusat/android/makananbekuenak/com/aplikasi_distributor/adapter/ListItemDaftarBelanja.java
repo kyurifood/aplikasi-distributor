@@ -1,6 +1,8 @@
 package pusat.android.makananbekuenak.com.aplikasi_distributor.adapter;
 
 import android.content.Context;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,8 +72,6 @@ public class ListItemDaftarBelanja extends BaseAdapter {
         daftar2.setTipe_produk("KRP.002-KARAPAU-A4");
         daftar2.setHarga("30.000");
         daftar2.setQuantiti("4");
-
-
 
         return convertView;
     }

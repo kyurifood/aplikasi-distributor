@@ -2,6 +2,9 @@ package pusat.android.makananbekuenak.com.aplikasi_distributor.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -75,8 +78,10 @@ public class UpdateStokBaseAdapter extends BaseAdapter {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
+
 				if (isChecked) {
 					//ON
+
 					Toast.makeText(context, updateStokItemDetailsrrayList.get(position).getName() + ", " + updateStokItemDetailsrrayList.get(position).getItemDescription() + ", Tersedia", Toast.LENGTH_LONG).show();
 				} else {
 					//OFF

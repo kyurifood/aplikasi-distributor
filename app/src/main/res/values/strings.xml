@@ -91,7 +91,9 @@
         <item>@string/prok28</item>
         <item>@string/prok29</item>
         <item>@string/prok30</item>
-
     </string-array>
+
+    <string name="title_section1">Detail Pesanan</string>
+    <string name="title_section2">Detail Pengiriman</string>
 
 </resources>
