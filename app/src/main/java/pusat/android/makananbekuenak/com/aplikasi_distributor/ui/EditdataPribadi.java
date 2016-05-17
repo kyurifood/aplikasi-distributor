@@ -360,6 +360,8 @@ public class EditdataPribadi extends AppCompatActivity {
         bb.putString("panggilcabang", var_cabang);
         parsing.putExtras(bb);
         startActivity(parsing);
+
+
         Toast.makeText(EditdataPribadi.this, "Update Data Pribadi berhasil", Toast.LENGTH_SHORT).show();
 
     }
